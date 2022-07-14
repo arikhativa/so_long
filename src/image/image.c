@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 14:52:30 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 17:27:36 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/14 18:19:00 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ static void	init_path(char path[MAX_PATH], char *file_name)
 	path[j + i] = '\0';
 }
 
-int	image_load(t_image *img, t_meta *m, char *file_name)
+int	image_load(t_image *img, void *mlx, char *file_name)
 {
 	char	path[MAX_PATH];
 
 	init_path(path, file_name);
-	img->ref = mlx_xpm_file_to_image(meta_get_mlx(m), path, &(img->size->x), \
+	img->ref = mlx_xpm_file_to_image(mlx, path, &(img->size->x), \
 		&(img->size->y));
 	if (!img->ref)
 		return (ERROR);

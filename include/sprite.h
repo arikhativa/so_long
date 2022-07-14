@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.h                                           :+:      :+:    :+:   */
+/*   sprite.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 15:20:31 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 18:49:11 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/14 17:57:57 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/14 18:49:40 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WINDOW_H
-# define WINDOW_H
+#ifndef SPRITE_H
+# define SPRITE_H
 
 # include "object.h"
 
-t_window	*window_create(void *mlx, int width, int height, char *name);
-void		window_free(t_window *w);
-
-void		*window_get_win(t_window *w);
+t_sprite 	*sprite_create_and_load(void *mlx);
+t_sprite	*sprite_create(void);
+int			sprite_load(t_sprite *s, void *mlx);
+void		sprite_free(t_sprite *s);
 
 #endif
