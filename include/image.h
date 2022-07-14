@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 14:47:18 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 16:45:42 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/14 16:57:48 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ typedef struct s_image
 t_image	*image_create(void);
 int		image_load(t_image *img, t_meta *m, char *path);
 void	image_free(t_image *img);
-void	image_put(t_image *img, t_meta *m);
+void	image_put(t_image *img, t_meta *m, t_point *p);
 
 #endif

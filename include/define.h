@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 16:41:31 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/14 17:11:16 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 
 # define SUCCESS	10
 # define ERROR		11
+# define XPM_PATH	"./resource/xpm/"
+# define MAX_PATH	100
 
 # ifndef WIDTH
-#  define WIDTH		1000
+#  define WIDTH		1980
 # endif
 
 # ifndef HEIGHT
-#  define HEIGHT	1000
+#  define HEIGHT	1080
 # endif
 
 # ifndef NAME
