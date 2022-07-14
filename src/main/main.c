@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   define.h                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 16:41:31 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/14 16:50:00 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINE_H
-# define DEFINE_H
+#include <stdio.h>
+#include <math.h>
 
-# define SUCCESS	10
-# define ERROR		11
+#include "define.h"
+#include "image.h"
+#include "meta.h"
 
-# ifndef WIDTH
-#  define WIDTH		1000
-# endif
+int main(int ac, char **av)
+{
+	t_meta	*m;
+	t_image	*img;
 
-# ifndef HEIGHT
-#  define HEIGHT	1000
-# endif
+	m = meta_create(WIDTH, HEIGHT, NAME);
+	if (!m)
+		return (ERROR);
+	img = image_create();
+	if (ERROR == image_load(img, m, "./img/block.xpm"))
+		return (ERROR);
+	image_put(img, m);
+	mlx_loop(meta_get_mlx(m));
+	
+	return (SUCCESS);
+}
 
-# ifndef NAME
-#  define NAME		"so-long"
-# endif
-
-#endif

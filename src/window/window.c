@@ -6,12 +6,13 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:25:03 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 15:41:53 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/14 16:51:35 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+#include "mlx.h"
 #include "point.h"
 #include "window.h"
 

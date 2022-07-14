@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   meta_get.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 15:16:45 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/14 16:35:24 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/14 16:37:40 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <math.h>
+#include "window.h"
+#include "meta.h"
 
-#include "mlx.h"
-#include "define.h"
-
-
-int main(int ac, char **av)
+inline void	*meta_get_mlx(t_meta *m)
 {
-    
-    return (SUCCESS);
+    return (m->mlx);
 }
 
+inline void	*meta_get_win(t_meta *m)
+{
+    return (window_get_win(m->win));
+}

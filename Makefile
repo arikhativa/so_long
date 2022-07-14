@@ -6,13 +6,13 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/14 14:27:49 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/14 16:53:16 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRC = $(wildcard *.c)
+SRC = $(wildcard src/**/*.c)
 
 OBJ = $(SRC:.c=.o)
 HED = include

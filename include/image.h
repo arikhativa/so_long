@@ -6,16 +6,18 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 14:47:18 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 15:10:48 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/14 16:45:42 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMAGE_H
 # define IMAGE_H
 
+# include "meta.h"
 # include "point.h"
 
-typedef struct	s_image {
+typedef struct s_image
+{
 	void		*ref;
 	t_point		*size;
 	char		*pixel;
@@ -25,7 +27,8 @@ typedef struct	s_image {
 }				t_image;
 
 t_image	*image_create(void);
-int		image_load(t_image *img, void *mlx, char *path);
-void    image_free(t_image *img);
+int		image_load(t_image *img, t_meta *m, char *path);
+void	image_free(t_image *img);
+void	image_put(t_image *img, t_meta *m);
 
 #endif
