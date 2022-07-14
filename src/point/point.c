@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   define.h                                           :+:      :+:    :+:   */
+/*   point.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 15:04:28 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/14 15:05:04 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/14 15:13:08 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINE_H
-# define DEFINE_H
+#include <stdlib.h>
 
-# define SUCCESS    10
-# define ERROR      11
+#include "point.h"
 
-#endif
+t_point	*point_create(void)
+{
+	t_point	*p;
+
+	p = (t_point *)malloc(sizeof(t_point));
+	if (!p)
+		return (NULL);
+	return (p);
+}
+
+void	point_free(t_point *p)
+{
+	p->x = 0;
+	p->y = 0;
+	free(p);
+}
