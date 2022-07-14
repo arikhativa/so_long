@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   point.h                                            :+:      :+:    :+:   */
+/*   window.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 14:50:41 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 15:34:50 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/14 15:20:31 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/14 15:37:29 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_H
-# define POINT_H
+#ifndef WINDOW_H
+# define WINDOW_H
 
-typedef struct s_point
-{
-    int x;
-    int y;
-}   t_point;
+# include "point.h"
 
-t_point *point_create(void);
-t_point	*point_create_set(int x, int y);
-void    point_free(t_point *p);
-void	point_set(t_point *p, int x, int y);
+typedef struct	s_window {
+	void		*ref;
+	t_point     *size;
+}				t_window;
+
+t_window	*window_create(void *mlx,  int width, int height, char *name);
+void		window_free(t_window *w);
 
 #endif

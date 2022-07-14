@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   point.h                                            :+:      :+:    :+:   */
+/*   meta.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 14:50:41 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 15:34:50 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/14 15:19:23 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/14 15:41:28 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_H
-# define POINT_H
+#ifndef META_H
+# define META_H
 
-typedef struct s_point
-{
-    int x;
-    int y;
-}   t_point;
+# include "window.h"
 
-t_point *point_create(void);
-t_point	*point_create_set(int x, int y);
-void    point_free(t_point *p);
-void	point_set(t_point *p, int x, int y);
+typedef struct	s_meta {
+	void		*mlx;
+	t_window	*win;
+	// t_image		sprite;
+	// t_vector	sprite_position;
+}				t_meta;
+
+t_meta	*meta_create(int width, int height, char *name);
+void	meta_free(t_meta *m);
 
 #endif

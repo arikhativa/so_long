@@ -1,49 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   point.c                                            :+:      :+:    :+:   */
+/*   window.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 15:05:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 15:34:33 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/14 15:25:03 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/14 15:41:53 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 #include "point.h"
+#include "window.h"
 
-t_point	*point_create(void)
+t_window	*window_create(void *mlx, int width, int height, char *name)
 {
-	t_point	*p;
+	t_window	*w;
 
-	p = (t_point *)malloc(sizeof(t_point));
-	if (!p)
+	w = (t_window *)malloc(sizeof(t_window));
+	if (!w)
 		return (NULL);
-	return (p);
-}
-
-t_point	*point_create_set(int x, int y)
-{
-	t_point	*p;
-
-	p = (t_point *)malloc(sizeof(t_point));
-	if (!p)
+	w->size = point_create_set(width, height);
+	if (!w->size)
+	{
+		free(w);
 		return (NULL);
-	point_set(p, x, y);
-	return (p);
+	}
+	w->ref = mlx_new_window(mlx, width, height, name);
+	if (!w->ref)
+	{
+		point_free(w->size);
+		free(w);
+		return (NULL);
+	}
+	return (w);
 }
 
-void	point_free(t_point *p)
+void	window_free(t_window *w)
 {
-	p->x = 0;
-	p->y = 0;
-	free(p);
-}
-
-void	point_set(t_point *p, int x, int y)
-{
-	p->x = x;
-	p->y = y;
+	point_free(w->size);
+	w->size = NULL;
+	free(w);
 }

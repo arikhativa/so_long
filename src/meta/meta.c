@@ -1,49 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   point.c                                            :+:      :+:    :+:   */
+/*   meta.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 15:05:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 15:34:33 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/14 15:41:07 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-#include "point.h"
+#include "mlx.h"
+#include "window.h"
+#include "meta.h"
 
-t_point	*point_create(void)
+t_meta	*meta_create(int width, int height, char *name)
 {
-	t_point	*p;
+	t_meta	*m;
 
-	p = (t_point *)malloc(sizeof(t_point));
-	if (!p)
+	m = (t_meta *)malloc(sizeof(t_meta));
+	if (!m)
 		return (NULL);
-	return (p);
-}
-
-t_point	*point_create_set(int x, int y)
-{
-	t_point	*p;
-
-	p = (t_point *)malloc(sizeof(t_point));
-	if (!p)
+	m->mlx = mlx_init();
+	if (!m->mlx)
 		return (NULL);
-	point_set(p, x, y);
-	return (p);
+	m->win = window_create(m->mlx, width, height, name);
+	if (!m->win)
+	{
+		free(m);
+		return (NULL);
+	}
+	return (m);
 }
 
-void	point_free(t_point *p)
+void	meta_free(t_meta *m)
 {
-	p->x = 0;
-	p->y = 0;
-	free(p);
-}
-
-void	point_set(t_point *p, int x, int y)
-{
-	p->x = x;
-	p->y = y;
+	window_free(m->win);
+	m->win = NULL;
+	free(m);
 }
