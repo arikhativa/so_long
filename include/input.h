@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   point.h                                            :+:      :+:    :+:   */
+/*   input.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 14:50:41 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 11:56:13 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/15 11:23:55 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/15 13:19:29 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_H
-# define POINT_H
+#ifndef INPUT_H
+# define INPUT_H
 
-# include "object.h"
+int	get_line_size(char *line);
+int	is_first_line_size_valid(int len);
+int	is_mid_line_size_valid(char *line, int first_line_len);
 
-t_point	*point_create(void);
-t_point	*point_create_set(int x, int y);
-t_point	*point_create_copy(t_point *p);
-void	point_free(t_point *p);
-void	point_set(t_point *p, int x, int y);
+int	input_get_size(int fd, t_point *size);
+int	input_open(const char *file_path);
+
 
 #endif

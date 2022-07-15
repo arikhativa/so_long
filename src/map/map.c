@@ -1,60 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   point.c                                            :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 15:05:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 11:56:07 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/15 11:47:50 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/15 13:16:18 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 #include "point.h"
+#include "map.h"
+#include "object.h"
+#include "tab.h"
 
-t_point	*point_create(void)
+t_map	*map_create(t_point *size)
 {
-	t_point	*p;
+	t_map	*m;
 
-	p = (t_point *)malloc(sizeof(t_point));
-	if (!p)
+	m = (t_map *)malloc(sizeof(t_map));
+	if (!m)
 		return (NULL);
-	return (p);
-}
-
-t_point	*point_create_set(int x, int y)
-{
-	t_point	*p;
-
-	p = point_create();
-	if (!p)
+	m->size = point_create_copy(size);
+	if (!m->size)
+	{
+		free(m);
 		return (NULL);
-	point_set(p, x, y);
-	return (p);
-}
-
-t_point	*point_create_copy(t_point *p)
-{
-	t_point	*new;
-
-	new = point_create();
-	if (!new)
+	}
+	m->tab = tab_create(size);
+	if (!m->tab)
+	{
+		free(m->size);
+		m->size = NULL;
+		free(m);
 		return (NULL);
-	point_set(new, p->x, p->y);
-	return (new);
+	}
+	return (m);
 }
 
-void	point_free(t_point *p)
+void	map_free(t_map *m)
 {
-	p->x = 0;
-	p->y = 0;
-	free(p);
-}
-
-void	point_set(t_point *p, int x, int y)
-{
-	p->x = x;
-	p->y = y;
+	tab_free(m->tab);
+	m->tab = NULL;
+	point_free(m->size);
+	m->size = NULL;
+	free(m);
 }

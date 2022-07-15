@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/14 16:53:16 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/15 13:20:11 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,35 +14,44 @@ NAME = so_long
 
 SRC = $(wildcard src/**/*.c)
 
-OBJ = $(SRC:.c=.o)
 HED = include
 
-# Libs
-LIBFT_PATH = libft
-LIBFT = $(LIBFT_PATH)/libft.a
+LIBFT_NAME = libft.a
+LIBFT_PATH = libft/
+LIBFT  = $(addprefix $(LIBFT_PATH), $(LIBFT_NAME))
+LIBMLX_PATH = libmlx/
+LIBMLX_NAME = libmlx.a
+LIBMLX  = $(addprefix $(LIBMLX_PATH), $(LIBMLX_NAME))
 
-LIBMLX_PATH = libmlx
-LIBMLX = $(LIBMLX_PATH)/libmlx.a
+GNL = get_next_line.c get_next_line_utils.c
+GNL_PATH = get_next_line/
+SRC_GNL = $(addprefix $(GNL_PATH), $(GNL))
+
+MLX_CFLAGS = "-O2 -Wno-deprecated-declarations"
 
 CC = gcc
 #  TODO
-CFLAGS = -c -I$(HED) -I$(LIBFT_PATH) -I$(LIBMLX_PATH)
-# CFLAGS = -Wall -Werror -Wextra -c -I$(HED) -Ilibft
+CFLAGS = -c -I$(HED) -I$(LIBFT_PATH) -I$(LIBMLX_PATH) -I$(GNL_PATH)
+# CFLAGS = -Wall -Werror -Wextra -c -I$(HED) -I$(LIBFT_PATH) -I$(LIBMLX_PATH)
+LDFLAGS = -L $(LIBFT_PATH) -L $(LIBMLX_PATH)
+LDLIBS = -lft -lmlx -framework OpenGL -framework AppKit
 RM = rm -f
 
+OBJ = $(SRC:.c=.o) $(SRC_GNL)
+
 .PHONY: clean fclean re all bonus
-.PRECIOUS: $(SRC) $(HED) $(LIBFT)
+.PRECIOUS: $(SRC) $(HED) $(LIBFT) $(LIBMLX)
 
 all: $(NAME)
 
 $(LIBMLX):
-	$(MAKE) -sC ./$(LIBMLX_PATH) 
+	$(MAKE) -sC ./$(LIBMLX_PATH) CFLAGS=$(MLX_CFLAGS)
 
 $(LIBFT):
-	$(MAKE) bonus -C ./$(LIBFT_PATH)
+	$(MAKE) bonus -sC ./$(LIBFT_PATH)
 
 $(NAME): $(OBJ) $(LIBFT) $(LIBMLX)
-	$(CC) $^ -o $@ -lmlx -framework OpenGL -framework AppKit
+	$(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
 
 bonus: $(NAME) 
 

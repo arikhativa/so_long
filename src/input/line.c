@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   point.h                                            :+:      :+:    :+:   */
+/*   line.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 14:50:41 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 11:56:13 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/15 12:20:59 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/15 13:19:22 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_H
-# define POINT_H
+#include "define.h"
 
-# include "object.h"
+int	get_line_size(char *line)
+{
+	int	i;
 
-t_point	*point_create(void);
-t_point	*point_create_set(int x, int y);
-t_point	*point_create_copy(t_point *p);
-void	point_free(t_point *p);
-void	point_set(t_point *p, int x, int y);
+	i = 0;
+	while (NEW_LINE != line[i])
+		++i;
+	return (i);
+}
 
-#endif
+int	is_first_line_size_valid(int len)
+{
+	return (MIN_WIDTH_LEN > len);
+}
+
+int	is_mid_line_size_valid(char *line, int first_line_len)
+{
+	int	new_len;
+
+	new_len = get_line_size(line);
+	if (new_len != first_line_len)
+		return (FALSE);
+	return (TRUE);
+}

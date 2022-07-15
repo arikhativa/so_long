@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 18:58:12 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 13:15:26 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,30 @@
 #include "image.h"
 #include "sprite.h"
 #include "meta.h"
+#include "input.h"
 
 int main(int ac, char **av)
 {
 	t_meta	*m;
 	t_point	p;
+	int	fd;
+	int	stt;
 
+	if (2 != ac)
+		return (ERROR);
 	m = meta_create(WIDTH, HEIGHT, NAME);
 	if (!m)
 		return (ERROR);
-	point_set(&p, 0, 0);
-	image_put(m->sprite->img_map[0], m, &p);
-
-	point_set(&p, 64, 0);
-	image_put(m->sprite->img_map[1], m, &p);
-
-	mlx_loop(meta_get_mlx(m));
-	
+	fd = input_open(av[1]);
+	if (FD_ERROR == fd)
+	{
+		perror("fd issue: ");
+		return (ERROR);
+	}
+	stt = input_get_size(fd, &p);
+	printf("stt: %d\n", stt);
+	printf("x: %d\n", p.x);
+	printf("y: %d\n", p.y);
 	return (SUCCESS);
 }
 
