@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 16:23:12 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 17:56:16 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int main(int ac, char **av)
 	int	fd;
 	int	stt;
 
-	*m;
 	if (2 != ac)
 		return (ERROR);
 	fd = input_open(av[1]);
@@ -40,12 +39,13 @@ int main(int ac, char **av)
 		return (ERROR);
 	}
 	m = meta_create(WIDTH, HEIGHT, NAME, fd);
-	if (!m)
-		return (ERROR);
-	tab_print(m->map->tab);
-	printf("map size x: %d\n", m->map->size->x);
-	printf("map size y: %d\n", m->map->size->y);
-	meta_free(m);
+	if (m)
+	{
+		tab_print(m->map->tab);
+		printf("map size x: %d\n", m->map->size->x);
+		printf("map size y: %d\n", m->map->size->y);
+		meta_free(m);
+	}
 	close(fd);
 	return (SUCCESS);
 }

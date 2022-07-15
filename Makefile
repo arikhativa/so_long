@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/15 16:24:23 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/15 17:55:14 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,9 @@ HED = include
 LIBFT_NAME = libft.a
 LIBFT_PATH = libft/
 LIBFT  = $(addprefix $(LIBFT_PATH), $(LIBFT_NAME))
+# LIBMLX_PATH = libmlx-linux/
+# LIBMLX_NAME = libmlx_Linux.a
+# LIBMLX  = $(addprefix $(LIBMLX_PATH), $(LIBMLX_NAME))
 LIBMLX_PATH = libmlx/
 LIBMLX_NAME = libmlx.a
 LIBMLX  = $(addprefix $(LIBMLX_PATH), $(LIBMLX_NAME))
@@ -32,6 +35,7 @@ CC = gcc
 CFLAGS = -c -I$(HED) -I$(LIBFT_PATH) -I$(LIBMLX_PATH) -I$(GNL_PATH) 
 # CFLAGS = -Wall -Werror -Wextra -c -I$(HED) -I$(LIBFT_PATH) -I$(LIBMLX_PATH)
 LDFLAGS = -L $(LIBFT_PATH) -L $(LIBMLX_PATH)
+# LDLIBS = -lft -lmlx -lXext -lX11 -lbsd
 LDLIBS = -lft -lmlx -framework OpenGL -framework AppKit
 RM = rm -f
 
@@ -55,13 +59,32 @@ $(NAME): $(OBJ) $(LIBFT) $(LIBMLX)
 bonus: $(NAME) 
 
 clean:
-	$(MAKE) clean -C ./$(LIBMLX_PATH)
-	$(MAKE) clean -C ./$(LIBFT_PATH)
+# $(MAKE) clean -C ./$(LIBMLX_PATH)
+# $(MAKE) clean -C ./$(LIBFT_PATH)
 	$(RM) $(OBJ)
 
 fclean: clean
-	$(MAKE) clean -C ./$(LIBMLX_PATH)
-	$(MAKE) fclean -C ./$(LIBFT_PATH)
+# $(MAKE) clean -C ./$(LIBMLX_PATH)
+# $(MAKE) fclean -C ./$(LIBFT_PATH)
 	$(RM) $(NAME)
 
 re: fclean all
+
+
+# Docker TODO
+IMG=arikhatica/minilibx:ubuntu
+NAME=minilibx
+WORKDIR=/home
+
+build:
+	docker build -t $(IMG) .
+
+run:
+	docker run -d -it -v ~:$(WORKDIR)/ --name $(NAME) $(IMG) -p 555:555
+
+stop:
+	docker rm -f $(NAME)
+
+enter:
+	docker exec -it $(NAME) bash
+
