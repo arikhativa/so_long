@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 12:45:35 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 15:18:18 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@
 // Map
 # define MIN_WIDTH_LEN	5
 # define MIN_HEIGHT_LEN	5
+# define BER_MAX_LINE	100
+# define MAP_INVALIDE_X	-1
+
 
 # ifndef WIDTH
 #  define WIDTH		1980

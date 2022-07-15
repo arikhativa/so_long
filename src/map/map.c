@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:47:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 13:16:18 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 15:53:27 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "object.h"
 #include "tab.h"
 
-t_map	*map_create(t_point *size)
+t_map	*map_create(t_point *size, char **tab)
 {
 	t_map	*m;
 
@@ -30,14 +30,7 @@ t_map	*map_create(t_point *size)
 		free(m);
 		return (NULL);
 	}
-	m->tab = tab_create(size);
-	if (!m->tab)
-	{
-		free(m->size);
-		m->size = NULL;
-		free(m);
-		return (NULL);
-	}
+	m->tab = tab;
 	return (m);
 }
 

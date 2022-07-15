@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:47:20 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 11:50:28 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 15:24:03 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct s_meta
 	void		*mlx;
 	t_window	*win;
 	t_sprite	*sprite;
+	t_map		*map;
 }				t_meta;
 
 #endif

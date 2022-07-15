@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:19:23 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 18:49:27 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 15:59:10 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "object.h"
 
-t_meta	*meta_create(int width, int height, char *name);
+t_meta	*meta_create(int width, int height, char *name, int fd);
 void	meta_free(t_meta *m);
 
 void	*meta_get_mlx(t_meta *m);

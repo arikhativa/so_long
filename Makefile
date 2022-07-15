@@ -6,13 +6,11 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/15 13:20:11 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/15 16:24:23 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-
-SRC = $(wildcard src/**/*.c)
 
 HED = include
 
@@ -31,16 +29,17 @@ MLX_CFLAGS = "-O2 -Wno-deprecated-declarations"
 
 CC = gcc
 #  TODO
-CFLAGS = -c -I$(HED) -I$(LIBFT_PATH) -I$(LIBMLX_PATH) -I$(GNL_PATH)
+CFLAGS = -c -I$(HED) -I$(LIBFT_PATH) -I$(LIBMLX_PATH) -I$(GNL_PATH) 
 # CFLAGS = -Wall -Werror -Wextra -c -I$(HED) -I$(LIBFT_PATH) -I$(LIBMLX_PATH)
 LDFLAGS = -L $(LIBFT_PATH) -L $(LIBMLX_PATH)
 LDLIBS = -lft -lmlx -framework OpenGL -framework AppKit
 RM = rm -f
 
-OBJ = $(SRC:.c=.o) $(SRC_GNL)
+SRC = $(wildcard src/**/*.c) $(SRC_GNL)
+OBJ = $(SRC:.c=.o)
 
 .PHONY: clean fclean re all bonus
-.PRECIOUS: $(SRC) $(HED) $(LIBFT) $(LIBMLX)
+.PRECIOUS: $(SRC) $(HED) $(LIBFT) $(LIBMLX) $(SRC_GNL)
 
 all: $(NAME)
 

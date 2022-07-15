@@ -6,52 +6,67 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 18:57:54 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 16:08:52 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 #include "mlx.h"
+#include "object.h"
+#include "input.h"
 #include "sprite.h"
 #include "window.h"
+#include "map.h"
 #include "meta.h"
 
-static t_meta	*meta_create_2(t_meta *m)
+static inline int	meta_create_2(t_meta *m, int fd)
 {
 	m->sprite = sprite_create_and_load(meta_get_mlx(m));
 	if (!m->sprite)
-	{
-		window_free(m->win);
-		m->win = NULL;
-	}
-	return (m);
+		return (ERROR);
+	m->map = input_create_map(fd);
+	if (!m->map)
+		return (ERROR);
+	return (SUCCESS);
 }
 
-t_meta	*meta_create(int width, int height, char *name)
+static inline int meta_create_1(t_meta *m, int width, int height, char *name)
+{
+	m->mlx = mlx_init();
+	if (!m->mlx)
+		return (ERROR);
+	m->win = window_create(m->mlx, width, height, name);
+	if (!m->win)
+		return (ERROR);
+	return (SUCCESS);
+}
+
+t_meta	*meta_create(int width, int height, char *name, int fd)
 {
 	t_meta	*m;
+	int		stt;
 
 	m = (t_meta *)malloc(sizeof(t_meta));
 	if (!m)
 		return (NULL);
-	m->mlx = mlx_init();
-	if (!m->mlx)
-		return (NULL);
-	m->win = window_create(m->mlx, width, height, name);
-	if (!m->win)
+	stt = meta_create_1(m, width, height, name);
+	stt += meta_create_2(m, fd);
+	if (SUCCESS != stt)
 	{
-		free(m);
+		meta_free(m);
 		return (NULL);
 	}
-	return (meta_create_2(m));
+	return (m);
 }
 
 void	meta_free(t_meta *m)
 {
-	sprite_free(m->sprite);
-	m->sprite = NULL;
-	window_free(m->win);
-	m->win = NULL;
+	if (m->win)
+		window_free(m->win);
+	if (m->sprite)
+		sprite_free(m->sprite);
+	if (m->map)
+		map_free(m->map);
 	free(m);
 }

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:48:38 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 12:07:52 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 15:12:13 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "object.h"
 
-t_map	*map_create(t_point *size);
+t_map	*map_create(t_point *size, char **tab);
 void	map_free(t_map *m);
 
 #endif

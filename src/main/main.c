@@ -6,12 +6,13 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 13:15:26 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 16:23:12 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include <stdio.h>
+#include <unistd.h>
 
 #include "define.h"
 #include "point.h"
@@ -19,6 +20,7 @@
 #include "image.h"
 #include "sprite.h"
 #include "meta.h"
+#include "tab.h"
 #include "input.h"
 
 int main(int ac, char **av)
@@ -28,10 +30,8 @@ int main(int ac, char **av)
 	int	fd;
 	int	stt;
 
+	*m;
 	if (2 != ac)
-		return (ERROR);
-	m = meta_create(WIDTH, HEIGHT, NAME);
-	if (!m)
 		return (ERROR);
 	fd = input_open(av[1]);
 	if (FD_ERROR == fd)
@@ -39,10 +39,14 @@ int main(int ac, char **av)
 		perror("fd issue: ");
 		return (ERROR);
 	}
-	stt = input_get_size(fd, &p);
-	printf("stt: %d\n", stt);
-	printf("x: %d\n", p.x);
-	printf("y: %d\n", p.y);
+	m = meta_create(WIDTH, HEIGHT, NAME, fd);
+	if (!m)
+		return (ERROR);
+	tab_print(m->map->tab);
+	printf("map size x: %d\n", m->map->size->x);
+	printf("map size y: %d\n", m->map->size->y);
+	meta_free(m);
+	close(fd);
 	return (SUCCESS);
 }
 
