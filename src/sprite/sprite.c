@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:31:33 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 16:45:11 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 19:28:55 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	sprite_check_create(t_sprite *s)
 	return (SUCCESS);
 }
 
-t_sprite *sprite_create(void)
+t_sprite *sprite_create(void *mlx)
 {
 	int		i;
 	t_sprite *s;
@@ -47,7 +47,7 @@ t_sprite *sprite_create(void)
 	}
 	if (ERROR == sprite_check_create(s))
 	{
-		sprite_free(s);
+		sprite_free(s, mlx);
 		return (NULL);
 	}
 	return (s);
@@ -69,18 +69,18 @@ t_sprite *sprite_create_and_load(void *mlx)
 {
 	t_sprite *s;
 
-	s = sprite_create();
+	s = sprite_create(mlx);
 	if (!s)
 		return (NULL);
 	if (ERROR == sprite_load(s, mlx))
 	{
-		sprite_free(s);
+		sprite_free(s, mlx);
 		return (NULL);
 	}
 	return (s);
 }
 
-void	sprite_free(t_sprite *s)
+void	sprite_free(t_sprite *s, void *mlx)
 {
 	int	i;
 
@@ -89,7 +89,7 @@ void	sprite_free(t_sprite *s)
 	{
 		if (s->img_map[i])
 		{
-			image_free(s->img_map[i]);
+			image_free(s->img_map[i], mlx);
 			s->img_map[i] = NULL;
 		}
 		++i;

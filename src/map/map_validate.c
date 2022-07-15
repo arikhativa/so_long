@@ -6,11 +6,13 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:04:29 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 13:17:08 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 18:34:32 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "object.h"
+#include "map.h"
 #include "define.h"
 
 int	is_topbot_line_chars_valid(const char *line, int size)
@@ -43,3 +45,15 @@ int	is_mid_line_chars_valid(const char *line, int size)
 	return (TRUE);
 }
 
+// int	map_is_valid(t_map *m)
+// {
+// 	int	i;
+
+// 	m->size->x = get_line_size(m->tab[0]);
+// 	// if (!is_first_line_size_valid(m->size->x))
+// 	// 	return 
+
+// 	// if (m->tab[0])
+// 	i = 1;
+// 	while ()
+// }

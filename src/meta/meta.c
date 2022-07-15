@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 17:55:54 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 19:32:01 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ static inline int	meta_create_1(t_meta *m, int fd, char *name, t_point *p)
 {
 	m->mlx = mlx_init();
 	if (!m->mlx)
-	{
-		perror("mlx");
 		return (ERROR);
-	}
 	m->win = window_create(m->mlx, p->x, p->y, name);
 	if (!m->win)
 		return (ERROR);
@@ -66,9 +63,9 @@ void	meta_free(t_meta *m)
 	if (!m)
 		return ;
 	if (m->win)
-		window_free(m->win);
+		window_free(m->win, m->mlx);
 	if (m->sprite)
-		sprite_free(m->sprite);
+		sprite_free(m->sprite, m->mlx);
 	if (m->map)
 		map_free(m->map);
 	free(m);

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 14:52:30 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 17:56:11 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 19:25:39 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ t_image	*image_create(void)
 	return (img);
 }
 
-void	image_free(t_image *img)
+void	image_free(t_image *img, void *mlx)
 {
 	point_free(img->size);
 	img->size = NULL;
+	mlx_destroy_image(mlx, img->ref);
 	free(img);
 }
 

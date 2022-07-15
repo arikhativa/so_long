@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:25:03 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 17:23:09 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 19:30:56 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,10 @@ t_window	*window_create(void *mlx, int width, int height, char *name)
 	return (w);
 }
 
-void	window_free(t_window *w)
+void	window_free(t_window *w, void *mlx)
 {
 	point_free(w->size);
 	w->size = NULL;
+	mlx_destroy_window(mlx, w->ref);
 	free(w);
 }

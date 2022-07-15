@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:48:38 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 15:12:13 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 18:21:01 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,9 @@
 
 t_map	*map_create(t_point *size, char **tab);
 void	map_free(t_map *m);
+
+int	get_line_size(char *line);
+int	is_first_line_size_valid(int len);
+int	is_mid_line_size_valid(char *line, int first_line_len);
 
 #endif

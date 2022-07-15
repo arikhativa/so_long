@@ -16,8 +16,8 @@
 # include "object.h"
 
 t_sprite 	*sprite_create_and_load(void *mlx);
-t_sprite	*sprite_create(void);
+t_sprite	*sprite_create(void *mlx);
 int			sprite_load(t_sprite *s, void *mlx);
-void		sprite_free(t_sprite *s);
+void		sprite_free(t_sprite *s, void *mlx);
 
 #endif

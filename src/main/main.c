@@ -6,13 +6,14 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 17:56:16 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 19:02:20 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 #include "define.h"
 #include "point.h"
@@ -39,14 +40,17 @@ int main(int ac, char **av)
 		return (ERROR);
 	}
 	m = meta_create(WIDTH, HEIGHT, NAME, fd);
-	if (m)
-	{
-		tab_print(m->map->tab);
-		printf("map size x: %d\n", m->map->size->x);
-		printf("map size y: %d\n", m->map->size->y);
-		meta_free(m);
-	}
+	// if (m)
+	// {
+		// if (!map_is_valid(m->map))
+		// 	printf("invalide map\n");
+		// tab_print(m->map->tab);
+		// printf("map size x: %d\n", m->map->size->x);
+		// printf("map size y: %d\n", m->map->size->y);
+	// }
+	meta_free(m);
 	close(fd);
+	system("leaks so_long");
 	return (SUCCESS);
 }
 

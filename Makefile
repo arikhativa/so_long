@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/15 17:55:14 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/15 18:59:18 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ MLX_CFLAGS = "-O2 -Wno-deprecated-declarations"
 
 CC = gcc
 #  TODO
-CFLAGS = -c -I$(HED) -I$(LIBFT_PATH) -I$(LIBMLX_PATH) -I$(GNL_PATH) 
+CFLAGS = -c -I$(HED) -I$(LIBFT_PATH) -I$(LIBMLX_PATH) -I$(GNL_PATH)
 # CFLAGS = -Wall -Werror -Wextra -c -I$(HED) -I$(LIBFT_PATH) -I$(LIBMLX_PATH)
 LDFLAGS = -L $(LIBFT_PATH) -L $(LIBMLX_PATH)
 # LDLIBS = -lft -lmlx -lXext -lX11 -lbsd
@@ -54,6 +54,7 @@ $(LIBFT):
 	$(MAKE) bonus -sC ./$(LIBFT_PATH)
 
 $(NAME): $(OBJ) $(LIBFT) $(LIBMLX)
+	echo $(OBJ)
 	$(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
 
 bonus: $(NAME) 

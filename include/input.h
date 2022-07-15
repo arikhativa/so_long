@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:23:55 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 15:23:29 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/15 18:20:43 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,5 @@
 
 t_map	*input_create_map(int fd);
 int		input_open(const char *file_path);
-
 
 #endif
