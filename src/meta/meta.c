@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 13:28:46 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 16:57:37 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,34 +39,25 @@ static inline int	meta_create_1(t_meta *m, int fd, char *name, t_point *p)
 	return (SUCCESS);
 }
 
-t_meta	*meta_create(int width, int height, char *name, int fd)
+int meta_init(t_meta *m, t_point *p, char *name, int fd)
 {
-	t_meta	*m;
-	t_point	p;
 	int		stt;
 
-	m = (t_meta *)ft_calloc(1, sizeof(t_meta));
-	if (!m)
-		return (NULL);
-	point_set(&p, width, height);
-	stt = meta_create_1(m, fd, name, &p);
+	stt = meta_create_1(m, fd, name, p);
 	if (SUCCESS != stt)
 	{
 		meta_free(m);
-		return (NULL);
+		return (ERROR);
 	}
-	return (m);
+	return (SUCCESS);
 }
 
 void	meta_free(t_meta *m)
 {
-	if (!m)
-		return ;
 	if (m->win)
 		window_free(m->win, m->mlx);
 	if (m->sprite)
 		sprite_free(m->sprite, m->mlx);
 	if (m->map)
 		map_free(m->map);
-	free(m);
 }

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 13:55:53 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 16:58:15 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@
 #include "hook.h"
 #include "map.h"
 
-
 int main(int ac, char **av)
 {
-	t_meta	*m;
+	t_meta	m;
 	t_point	p;
 	int	fd;
 	int	stt;
@@ -42,23 +41,21 @@ int main(int ac, char **av)
 		perror("fd issue: ");
 		return (ERROR);
 	}
-	m = meta_create(WIDTH, HEIGHT, NAME, fd);
-	if (m)
+	point_set(&p, WIDTH, HEIGHT);
+	stt = meta_init(&m , &p, NAME, fd);
+	stt = map_validate(m.map);
+	if (SUCCESS != stt)
 	{
-		stt = map_validate(m->map);
-		if (SUCCESS != stt)
-		{
-			map_error_to_str(stt);
-			meta_free(m);
-			close(fd);
-			return (INVALID_MAP);
-		}
-		init_hooks(m);
-		mlx_loop(m->mlx);
+		map_error_to_str(stt);
+		meta_free(&m);
+		close(fd);
+		system("leaks so_long");
+		return (INVALID_MAP);
 	}
-	meta_free(m);
+	init_hooks(&m);
+	mlx_loop(m.mlx);
+	meta_free(&m);
 	close(fd);
-	// system("leaks so_long");
+	system("leaks so_long");
 	return (SUCCESS);
 }
-
