@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.c                                           :+:      :+:    :+:   */
+/*   draw_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 15:25:03 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 17:50:27 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/16 17:19:14 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/16 17:33:57 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
 #include "mlx.h"
 #include "point.h"
-#include "window.h"
+#include "image.h"
+#include "define.h"
+#include "object.h"
 
-t_window	*window_create(void *mlx, t_point *size)
+void	draw_wall(t_meta *m, t_point *pos)
 {
-	t_window	*w;
-
-	w = (t_window *)malloc(sizeof(t_window));
-	if (!w)
-		return (NULL);
-	w->size = size;
-	w->ref = mlx_new_window(mlx, size->x * IMG_SIZE, size->y * IMG_SIZE, GAME_NAME);
-	if (!w->ref)
-	{
-		point_free(w->size);
-		free(w);
-		return (NULL);
-	}
-	return (w);
+	mlx_put_image_to_window(m->mlx, m->win->ref,
+		get_image(m, WALL_I), pos->x, pos->y);
 }
 
-void	window_free(t_window *w, void *mlx)
+void	draw_map(t_meta *m)
 {
-	free(w);
+	t_point pos;
+	int	y;
+	int	x;
+
+	y = 0;
+	while (y < m->map->size->y)
+	{
+		x = 0;
+		while (x < m->map->size->x)
+		{
+			draw_wall(m, point_set(&pos, x * IMG_SIZE, y * IMG_SIZE));
+			++x;
+		}
+		y++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:05:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 11:56:07 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 17:25:09 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,9 @@ void	point_free(t_point *p)
 	free(p);
 }
 
-void	point_set(t_point *p, int x, int y)
+t_point *point_set(t_point *p, int x, int y)
 {
 	p->x = x;
 	p->y = y;
+	return (p);
 }

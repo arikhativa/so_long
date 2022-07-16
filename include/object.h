@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:47:20 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 15:24:03 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 17:44:00 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct s_sprite
 typedef struct s_window
 {
 	void		*ref;
+	// size is in the control of map
 	t_point		*size;
 }				t_window;
 

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 12:02:46 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 17:51:36 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@
 # define XPM_PATH	"./resource/xpm/"
 # define MAX_PATH	100
 # define NUM_OF_SPRITES	2
+# define IMG_SIZE	64
 
 // Images
 # define WALL_I		0
@@ -73,19 +74,8 @@
 // Events (defined my mlx)
 # define KEY_PRESS	2
 # define DESTORY_WINDOW	17
+# define ESC	53
 
-
-
-# ifndef WIDTH
-#  define WIDTH		1980
-# endif
-
-# ifndef HEIGHT
-#  define HEIGHT	1080
-# endif
-
-# ifndef NAME
-#  define NAME		"so-long"
-# endif
+# define GAME_NAME		"so-long"
 
 #endif

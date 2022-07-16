@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:48:38 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 11:28:19 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 17:41:52 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int	is_topbot_line_chars_valid(const char *line, int size);
 int	is_mid_line_chars_valid(const char *line, int size);
 
 void	map_error_to_str(int err);
+t_point	*map_get_size(t_meta *m);
 
 #endif

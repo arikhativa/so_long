@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 16:58:15 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 17:50:59 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 #include "tab.h"
 #include "input.h"
 #include "hook.h"
+#include "draw.h"
 #include "map.h"
 
 int main(int ac, char **av)
@@ -41,9 +42,7 @@ int main(int ac, char **av)
 		perror("fd issue: ");
 		return (ERROR);
 	}
-	point_set(&p, WIDTH, HEIGHT);
-	stt = meta_init(&m , &p, NAME, fd);
-	stt = map_validate(m.map);
+	stt = meta_init(&m, fd);
 	if (SUCCESS != stt)
 	{
 		map_error_to_str(stt);
@@ -52,6 +51,7 @@ int main(int ac, char **av)
 		system("leaks so_long");
 		return (INVALID_MAP);
 	}
+	draw_map(&m);
 	init_hooks(&m);
 	mlx_loop(m.mlx);
 	meta_free(&m);
