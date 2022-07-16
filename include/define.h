@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 11:10:23 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 11:41:52 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@
 # define BLOCK_STR	"block.xpm"
 
 // Map
-# define MIN_WIDTH_LEN	5
-# define MIN_HEIGHT_LEN	5
+# define MIN_WIDTH_LEN	2
+# define MIN_HEIGHT_LEN	2
 # define BER_MAX_LINE	100
 # define MAP_INVALIDE_X	-1
 

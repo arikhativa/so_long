@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/16 11:32:10 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/16 11:39:58 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ RM = rm -f
 
 SRC = $(wildcard src/**/*.c) $(SRC_GNL)
 OBJ = $(SRC:.c=.o)
-HED = $(wildcard $(HED_PATH)/**/*.h)
+HED = $(wildcard $(HED_PATH)/*.h)
 
 .PHONY: clean fclean re all bonus
 .PRECIOUS: $(SRC) $(HED) $(LIBFT) $(LIBMLX) $(SRC_GNL)

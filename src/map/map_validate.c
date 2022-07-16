@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:04:29 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 11:16:43 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 11:42:09 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	map_validate_size_cnd_char(t_map *m)
 {
 	int	i;
 
-	if (is_height_valid(m->size->y))
+	if (!is_height_valid(m->size->y))
 		return (BAD_HEIGHT);
 	m->size->x = get_line_size(m->tab[0]);
 	if (!is_first_line_size_valid(m->size->x))
