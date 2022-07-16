@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 13:23:53 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 13:55:53 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 
 int main(int ac, char **av)
 {
-	t_meta	m;
+	t_meta	*m;
 	t_point	p;
 	int	fd;
 	int	stt;
@@ -42,7 +42,7 @@ int main(int ac, char **av)
 		perror("fd issue: ");
 		return (ERROR);
 	}
-	m = meta_init(WIDTH, HEIGHT, NAME, fd);
+	m = meta_create(WIDTH, HEIGHT, NAME, fd);
 	if (m)
 	{
 		stt = map_validate(m->map);
