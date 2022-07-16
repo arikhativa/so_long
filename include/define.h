@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 11:41:52 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 12:02:46 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@
 # define BAD_PLAYER	40
 # define BAD_COLLECT	41
 # define BAD_EXIT	42
+
+// Events (defined my mlx)
+# define KEY_PRESS	2
+# define DESTORY_WINDOW	17
+
 
 
 # ifndef WIDTH

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 11:28:41 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 12:09:14 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@
 #include "meta.h"
 #include "tab.h"
 #include "input.h"
+#include "hook.h"
 #include "map.h"
+
 
 int main(int ac, char **av)
 {
@@ -51,9 +53,8 @@ int main(int ac, char **av)
 			close(fd);
 			return (INVALID_MAP);
 		}
-		tab_print(m->map->tab);
-		printf("map size x: %d\n", m->map->size->x);
-		printf("map size y: %d\n", m->map->size->y);
+		init_hooks(m);
+		mlx_loop(m->mlx);
 	}
 	meta_free(m);
 	close(fd);
