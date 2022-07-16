@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 11:45:09 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 16:57:43 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 17:01:05 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int	handler_key_press(int keycode, void *param)
 int	handler_close(int keycode, t_meta *m)
 {
 	printf("close\n");
-	system("leaks so_long");
+	// TODO does not work for some reason
+	// meta_free(m);
+	// system("leaks so_long");
 	exit(0);
 }
 
