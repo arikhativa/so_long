@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/16 09:58:33 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/16 11:32:10 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,16 @@ NAME = so_long
 
 HED_PATH = include
 
-LIBFT_NAME = libft.a
-LIBFT_PATH = libft/
+# libft + printf
+LIBFT_NAME = libftprintf.a
+LIBFT_PATH = ft_printf/
 LIBFT  = $(addprefix $(LIBFT_PATH), $(LIBFT_NAME))
+
+# normal libft
+# LIBFT_NAME = libft.a
+# LIBFT_PATH = libft/
+# LIBFT  = $(addprefix $(LIBFT_PATH), $(LIBFT_NAME))
+
 # LIBMLX_PATH = libmlx-linux/
 # LIBMLX_NAME = libmlx_Linux.a
 # LIBMLX  = $(addprefix $(LIBMLX_PATH), $(LIBMLX_NAME))
@@ -32,11 +39,11 @@ MLX_CFLAGS = "-O2 -Wno-deprecated-declarations"
 
 CC = gcc
 #  TODO
-CFLAGS = -c -I$(HED_PATH) -I$(LIBFT_PATH) -I$(LIBMLX_PATH) -I$(GNL_PATH)
+CFLAGS = -c -I$(HED_PATH) -I$(LIBFT_PATH)/include -I$(LIBFT_PATH)/libft -I$(LIBMLX_PATH) -I$(GNL_PATH)
 # CFLAGS = -Wall -Werror -Wextra -c -I$(HED_PATH) -I$(LIBFT_PATH) -I$(LIBMLX_PATH)
 LDFLAGS = -L $(LIBFT_PATH) -L $(LIBMLX_PATH)
 # LDLIBS = -lft -lmlx -lXext -lX11 -lbsd
-LDLIBS = -lft -lmlx -framework OpenGL -framework AppKit
+LDLIBS = -lftprintf -lmlx -framework OpenGL -framework AppKit
 RM = rm -f
 
 SRC = $(wildcard src/**/*.c) $(SRC_GNL)

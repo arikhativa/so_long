@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 10:07:13 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 11:28:41 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int main(int ac, char **av)
 		stt = map_validate(m->map);
 		if (SUCCESS != stt)
 		{
-			printf("invalide map: %d\n", stt);
+			map_error_to_str(stt);
 			meta_free(m);
 			close(fd);
 			return (INVALID_MAP);
