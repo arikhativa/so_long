@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:07:04 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 18:19:53 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@
 // General
 # define XPM_PATH	"./resource/xpm/"
 # define MAX_PATH	100
-# define NUM_OF_SPRITES	4
+# define NUM_OF_SPRITES	5
 # define IMG_SIZE	64
 
 // Images
@@ -53,6 +53,8 @@
 # define EXIT_STR	"door_01.xpm"
 # define COLLECT_I	3
 # define COLLECT_STR	"plant_01.xpm"
+# define EMPTY_I	4
+# define EMPTY_STR	"empty.xpm"
 
 // Map
 # define MIN_WIDTH_LEN	2
@@ -79,6 +81,11 @@
 # define KEY_PRESS	2
 # define DESTORY_WINDOW	17
 # define ESC	53
+# define RESET	15
+# define KEY_UP		13
+# define KEY_DOWN	 1
+# define KEY_LEFT	 0
+# define KEY_RIGHT	 2
 
 # define GAME_NAME		"so-long"
 

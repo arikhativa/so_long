@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:47:20 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 17:44:00 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 18:37:21 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ typedef struct s_point
 	int	x;
 	int	y;
 }	t_point;
+
+typedef struct s_player
+{
+	t_point	*pos;
+}	t_player;
 
 typedef struct s_map
 {
@@ -55,6 +60,7 @@ typedef struct s_meta
 	t_window	*win;
 	t_sprite	*sprite;
 	t_map		*map;
+	t_player	*player;
 }				t_meta;
 
 #endif

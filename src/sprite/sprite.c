@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:31:33 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:05:39 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 18:12:24 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int	sprite_load(t_sprite *s, void *mlx)
 	stt += image_load(s->img_map[PLAYER_I], mlx, PLAYER_STR);
 	stt += image_load(s->img_map[COLLECT_I], mlx, COLLECT_STR);
 	stt += image_load(s->img_map[EXIT_I], mlx, EXIT_STR);
+	stt += image_load(s->img_map[EMPTY_I], mlx, EMPTY_STR);
 	if (SUCCESS != stt)
 		return (ERROR);
 	return (SUCCESS);

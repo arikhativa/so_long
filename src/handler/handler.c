@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 17:15:29 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 17:38:31 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 18:57:28 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 
 #include "define.h"
+#include "player.h"
 #include "object.h"
 
 int	handler_close(int keycode, t_meta *m)
@@ -29,6 +30,11 @@ int	handler_key_press(int keycode, t_meta *m)
 {
 	if (ESC == keycode)
 		handler_close(keycode, m);
+	if (KEY_UP == keycode || \
+		KEY_DOWN == keycode || \
+		KEY_LEFT == keycode || \
+		KEY_RIGHT == keycode)
+		player_eval(keycode, m);
 	printf("keyyy\n");
 	return (1);
 }

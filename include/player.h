@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hook.c                                             :+:      :+:    :+:   */
+/*   player.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 11:45:09 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:56:24 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/16 18:28:22 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/16 18:52:09 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PLAYER_H
+# define PLAYER_H
+
 #include "object.h"
-#include "mlx.h"
-#include "meta.h"
-#include "handler.h"
 
-#include <stddef.h>
+void	player_eval(int key, t_meta *m);
 
+t_point	*player_get_pos(t_meta *m);
+int player_create(t_meta *m);
+void	player_free(t_player *p);
 
-void	init_hooks(t_meta *m)
-{
-	mlx_hook(m->win->ref, KEY_PRESS, 0, handler_key_press, m);
-	mlx_hook(m->win->ref, DESTORY_WINDOW, 0, handler_close, m);
-}
+t_point	*player_get_pos(t_meta *m);
+
+void	player_down(t_meta *m);
+void	player_up(t_meta *m);
+void	player_left(t_meta *m);
+void	player_right(t_meta *m);
+
+#endif

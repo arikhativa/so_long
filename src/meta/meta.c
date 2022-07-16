@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 17:51:16 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 18:48:43 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include "map.h"
 #include "point.h"
 #include "meta.h"
+#include "player.h"
 #include "libft.h"
 
 // TODO add err codes 
@@ -31,6 +32,9 @@ static inline int	meta_create_1(t_meta *m, int fd)
 	if (!m->map)
 		return (ERROR);
 	stt = map_validate(m->map);
+	if (SUCCESS != stt)
+		return (stt);
+	stt = player_create(m);
 	if (SUCCESS != stt)
 		return (stt);
 	m->mlx = mlx_init();
@@ -66,4 +70,6 @@ void	meta_free(t_meta *m)
 		sprite_free(m->sprite, m->mlx);
 	if (m->map)
 		map_free(m->map);
+	if (m->player)
+		player_free(m->player);
 }
