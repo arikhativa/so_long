@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 19:02:20 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 10:07:13 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 #include "meta.h"
 #include "tab.h"
 #include "input.h"
+#include "map.h"
 
 int main(int ac, char **av)
 {
@@ -40,17 +41,23 @@ int main(int ac, char **av)
 		return (ERROR);
 	}
 	m = meta_create(WIDTH, HEIGHT, NAME, fd);
-	// if (m)
-	// {
-		// if (!map_is_valid(m->map))
-		// 	printf("invalide map\n");
-		// tab_print(m->map->tab);
-		// printf("map size x: %d\n", m->map->size->x);
-		// printf("map size y: %d\n", m->map->size->y);
-	// }
+	if (m)
+	{
+		stt = map_validate(m->map);
+		if (SUCCESS != stt)
+		{
+			printf("invalide map: %d\n", stt);
+			meta_free(m);
+			close(fd);
+			return (INVALID_MAP);
+		}
+		tab_print(m->map->tab);
+		printf("map size x: %d\n", m->map->size->x);
+		printf("map size y: %d\n", m->map->size->y);
+	}
 	meta_free(m);
 	close(fd);
-	system("leaks so_long");
+	// system("leaks so_long");
 	return (SUCCESS);
 }
 

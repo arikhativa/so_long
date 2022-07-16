@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:04:29 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 18:34:32 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 10:21:33 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include "object.h"
 #include "map.h"
 #include "define.h"
+
+static inline int	is_height_valid(int	height)
+{
+	return (MIN_HEIGHT_LEN <= height);
+}
 
 int	is_topbot_line_chars_valid(const char *line, int size)
 {
@@ -45,15 +50,29 @@ int	is_mid_line_chars_valid(const char *line, int size)
 	return (TRUE);
 }
 
-// int	map_is_valid(t_map *m)
-// {
-// 	int	i;
+int	map_validate(t_map *m)
+{
+	int	i;
 
-// 	m->size->x = get_line_size(m->tab[0]);
-// 	// if (!is_first_line_size_valid(m->size->x))
-// 	// 	return 
-
-// 	// if (m->tab[0])
-// 	i = 1;
-// 	while ()
-// }
+	if (is_height_valid(m->size->y))
+		return (BAD_HEIGHT);
+	m->size->x = get_line_size(m->tab[0]);
+	if (!is_first_line_size_valid(m->size->x))
+		return (BAD_SIZE_TOP);
+	if (!is_topbot_line_chars_valid(m->tab[0], m->size->x))
+		return (BAD_CHAR_TOP);
+	i = 1;
+	while (i < (m->size->y - 1))
+	{
+		if (!is_mid_line_size_valid(m->tab[i], m->size->x))
+			return (BAD_SIZE_MID);
+		if (!is_mid_line_chars_valid(m->tab[i], m->size->x))
+			return (BAD_CHAR_MID);
+		++i;
+	}
+	if (!is_mid_line_size_valid(m->tab[m->size->y - 1], m->size->x))
+			return (BAD_SIZE_BOTTOM);
+	if (!is_topbot_line_chars_valid(m->tab[m->size->y - 1], m->size->x))
+		return (BAD_CHAR_BOTTOM);
+	return (SUCCESS);
+}

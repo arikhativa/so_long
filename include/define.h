@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 15:18:18 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 10:19:11 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,17 @@
 # define MIN_HEIGHT_LEN	5
 # define BER_MAX_LINE	100
 # define MAP_INVALIDE_X	-1
+
+// Map Validate return value
+# define BAD_CHAR_TOP	10
+# define BAD_CHAR_MID	11
+# define BAD_CHAR_BOTTOM	12
+
+# define BAD_SIZE_TOP	20
+# define BAD_SIZE_MID	21
+# define BAD_SIZE_BOTTOM	22
+
+# define BAD_HEIGHT	30
 
 
 # ifndef WIDTH

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:41:38 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 15:48:35 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 10:17:48 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,6 @@
 int	input_open(const char *file_path)
 {
 	return (open(file_path, O_RDONLY));
-}
-
-static inline int	is_height_valid(int	height)
-{
-	return (MIN_HEIGHT_LEN > height);
 }
 
 t_map	*input_create_map2(char **src_tab, int tab_size)

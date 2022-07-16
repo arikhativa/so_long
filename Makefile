@@ -6,13 +6,13 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/15 18:59:18 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/16 09:58:33 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-HED = include
+HED_PATH = include
 
 LIBFT_NAME = libft.a
 LIBFT_PATH = libft/
@@ -32,8 +32,8 @@ MLX_CFLAGS = "-O2 -Wno-deprecated-declarations"
 
 CC = gcc
 #  TODO
-CFLAGS = -c -I$(HED) -I$(LIBFT_PATH) -I$(LIBMLX_PATH) -I$(GNL_PATH)
-# CFLAGS = -Wall -Werror -Wextra -c -I$(HED) -I$(LIBFT_PATH) -I$(LIBMLX_PATH)
+CFLAGS = -c -I$(HED_PATH) -I$(LIBFT_PATH) -I$(LIBMLX_PATH) -I$(GNL_PATH)
+# CFLAGS = -Wall -Werror -Wextra -c -I$(HED_PATH) -I$(LIBFT_PATH) -I$(LIBMLX_PATH)
 LDFLAGS = -L $(LIBFT_PATH) -L $(LIBMLX_PATH)
 # LDLIBS = -lft -lmlx -lXext -lX11 -lbsd
 LDLIBS = -lft -lmlx -framework OpenGL -framework AppKit
@@ -41,6 +41,7 @@ RM = rm -f
 
 SRC = $(wildcard src/**/*.c) $(SRC_GNL)
 OBJ = $(SRC:.c=.o)
+HED = $(wildcard $(HED_PATH)/**/*.h)
 
 .PHONY: clean fclean re all bonus
 .PRECIOUS: $(SRC) $(HED) $(LIBFT) $(LIBMLX) $(SRC_GNL)
@@ -53,7 +54,7 @@ $(LIBMLX):
 $(LIBFT):
 	$(MAKE) bonus -sC ./$(LIBFT_PATH)
 
-$(NAME): $(OBJ) $(LIBFT) $(LIBMLX)
+$(NAME): $(OBJ) $(LIBFT) $(LIBMLX) $(HED) Makefile
 	echo $(OBJ)
 	$(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
 
