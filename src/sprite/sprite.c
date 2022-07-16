@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:31:33 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 19:28:55 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 11:15:32 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ static int	sprite_check_create(t_sprite *s)
 	return (SUCCESS);
 }
 
-t_sprite *sprite_create(void *mlx)
+t_sprite	*sprite_create(void *mlx)
 {
-	int		i;
-	t_sprite *s;
+	int			i;
+	t_sprite	*s;
 
 	s = (t_sprite *)malloc(sizeof(t_sprite));
 	if (!s)
@@ -53,7 +53,7 @@ t_sprite *sprite_create(void *mlx)
 	return (s);
 }
 
-int sprite_load(t_sprite *s, void *mlx)
+int	sprite_load(t_sprite *s, void *mlx)
 {
 	int	stt;
 
@@ -65,9 +65,9 @@ int sprite_load(t_sprite *s, void *mlx)
 	return (SUCCESS);
 }
 
-t_sprite *sprite_create_and_load(void *mlx)
+t_sprite	*sprite_create_and_load(void *mlx)
 {
-	t_sprite *s;
+	t_sprite	*s;
 
 	s = sprite_create(mlx);
 	if (!s)

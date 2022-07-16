@@ -6,13 +6,13 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 16:37:10 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 16:37:30 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 11:14:44 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "window.h"
 
-inline void		*window_get_win(t_window *w)
+inline void	*window_get_win(t_window *w)
 {
-    return (w->ref);
+	return (w->ref);
 }

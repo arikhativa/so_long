@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 14:52:30 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 19:25:39 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 11:17:27 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,13 @@ void	image_free(t_image *img, void *mlx)
 // TODO 
 static void	init_path(char path[MAX_PATH], char *file_name)
 {
-	char	*xpm_path = XPM_PATH;
+	char	*xpm_path;
 	int		i;
 	int		j;
 
 	i = 0;
 	j = 0;
+	xpm_path = XPM_PATH;
 	while (xpm_path[i])
 	{
 		path[i] = xpm_path[i];

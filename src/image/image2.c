@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:14:36 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 18:21:09 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 11:18:08 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,3 @@ t_image	*image_create_and_load(void	*mlx, char *name)
 	}
 	return (img);
 }
-

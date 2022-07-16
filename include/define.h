@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 10:19:11 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 11:10:23 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@
 # define EMPTY_CHAR	'0'
 # define WALL_CHAR	'1'
 # define COLLECT_CHAR	'C'
-# define ENEMY_CHAR	'E'
+# define EXIT_CHAR	'E'
 # define PLAYER_CHAR	'P'
+# define MIN_PLAYER	1
+# define MIN_EXIT	1
+# define MIN_COLLECT	1
 
 // XPM
 // General
@@ -62,6 +65,10 @@
 # define BAD_SIZE_BOTTOM	22
 
 # define BAD_HEIGHT	30
+
+# define BAD_PLAYER	40
+# define BAD_COLLECT	41
+# define BAD_EXIT	42
 
 
 # ifndef WIDTH

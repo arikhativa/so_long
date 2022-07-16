@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 19:32:01 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 11:16:00 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static inline int	meta_create_1(t_meta *m, int fd, char *name, t_point *p)
 t_meta	*meta_create(int width, int height, char *name, int fd)
 {
 	t_meta	*m;
-	t_point p;
+	t_point	p;
 	int		stt;
 
 	m = (t_meta *)ft_calloc(1, sizeof(t_meta));

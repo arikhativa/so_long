@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 16:35:24 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/14 16:37:40 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 11:15:51 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 inline void	*meta_get_mlx(t_meta *m)
 {
-    return (m->mlx);
+	return (m->mlx);
 }
 
 inline void	*meta_get_win(t_meta *m)
 {
-    return (window_get_win(m->win));
+	return (window_get_win(m->win));
 }

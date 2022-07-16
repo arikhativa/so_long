@@ -6,13 +6,14 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:59:33 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/15 15:25:17 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 11:01:20 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "libft.h"
 #include "object.h"
 
 // TODO remove..
@@ -58,6 +59,22 @@ void	tab_copy(char **d, char **s)
 		++i;
 	}
 	d[i] = NULL;
+}
+
+int	tab_count_char(char **tab, char c)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (tab[i])
+	{
+		if (ft_strchr(tab[i], c))
+			++count;
+		++i;
+	}
+	return (count);
 }
 
 // TODO remove?
