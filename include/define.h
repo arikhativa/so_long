@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 17:51:36 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/16 18:07:04 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,18 @@
 // General
 # define XPM_PATH	"./resource/xpm/"
 # define MAX_PATH	100
-# define NUM_OF_SPRITES	2
+# define NUM_OF_SPRITES	4
 # define IMG_SIZE	64
 
 // Images
 # define WALL_I		0
-# define WALL_STR	"wall.xpm"
-# define BLOCK_I	1
-# define BLOCK_STR	"block.xpm"
+# define WALL_STR	"wall_01.xpm"
+# define PLAYER_I	1
+# define PLAYER_STR	"player_01.xpm"
+# define EXIT_I		2
+# define EXIT_STR	"door_01.xpm"
+# define COLLECT_I	3
+# define COLLECT_STR	"plant_01.xpm"
 
 // Map
 # define MIN_WIDTH_LEN	2
