@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_is.c                                           :+:      :+:    :+:   */
+/*   draw_finish_game.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 10:25:59 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 15:52:34 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/17 15:56:58 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/17 16:00:38 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
+#include "mlx.h"
 #include "object.h"
+#include "player.h"
+#include "libft.h"
+#include "point.h"
 #include "map.h"
+#include "draw.h"
+#include "define.h"
 
-int	map_is_wall(t_meta *m, t_point *p)
+void	draw_finish_game(t_meta *m)
 {
-	return (WALL_CHAR == map_get_char(m, p));
+	mlx_string_put(m->mlx,
+					m->win->ref,
+					END_MSG_I * IMG_SIZE,
+					0,
+					MOVE_COUNTER_COLOR,
+					"Done! press 'esc' to exit :)");
 }
-
-int	map_is_exit(t_meta *m, t_point *p)
-{
-	return (EXIT_CHAR == map_get_char(m, p));
-}
-
-int	map_is_collect(t_meta *m, t_point *p)
-{
-	return (COLLECT_CHAR == map_get_char(m, p));
-}
-
-

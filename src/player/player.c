@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrabby <files.associations>                +#+  +:+       +#+        */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:38:22 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 14:11:46 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 15:56:22 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int player_create(t_meta *m)
 		return (ERROR_PLAYER_CREATE);
 	}
 	find_player_pos_in_map(m, m->player->pos);
+	m->player->is_enable = TRUE;
 	return (SUCCESS);
 }
 

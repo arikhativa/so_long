@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 15:11:23 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 16:01:58 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@
 # define MOVE_COUNTER_TEXT	"Move Counter"
 # define MOVE_COUNTER_COLOR	15921152
 # define MOVE_COUNTER_X	2
+# define END_MSG_I	7
 
 // Map Validate return value
 
@@ -95,6 +96,7 @@
 # define ERROR_SPRITE_CREATE 101
 # define ERROR_WINDOW_CREATE 102
 # define ERROR_PLAYER_CREATE 103
+# define ERROR_COLLECT_CREATE 104
 
 
 #endif

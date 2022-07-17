@@ -1,14 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   err_to_str.c                                       :+:      :+:    :+:   */
+/*   collect.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 11:18:56 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 12:44:45 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/17 15:32:43 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/17 15:39:35 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "define.h"
-#include "error.h"
+#include <stdlib.h>
+
+#include "libft.h"
+#include "object.h"
+
+t_collect	*collect_create(void)
+{
+	t_collect	*c;
+
+	c = ft_calloc(1, sizeof(t_collect));
+	if (!c)
+		return (NULL);
+	return (c);
+}
+
+void	collect_free(t_collect *c)
+{
+	if (c)
+	{
+		c->num_of_collect = 0;
+		free(c);
+	}
+}

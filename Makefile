@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yrabby <files.associations>                +#+  +:+       +#+         #
+#    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/17 13:18:23 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/17 16:03:44 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,9 @@ HED = $(wildcard $(HED_PATH)/*.h)
 .PHONY: clean fclean re all bonus
 .PRECIOUS: $(SRC) $(HED) $(LIBFT) $(LIBMLX) $(SRC_GNL)
 
+%.c: %.o
+	$(CC) $(CFLAGS)
+
 all: $(NAME)
 
 $(LIBMLX):
@@ -62,7 +65,6 @@ $(LIBFT):
 	$(MAKE) bonus -sC ./$(LIBFT_PATH)
 
 $(NAME): $(OBJ) $(LIBFT) $(LIBMLX) $(HED) Makefile
-	echo $(OBJ)
 	$(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
 
 bonus: $(NAME) 

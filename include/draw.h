@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 17:28:24 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 11:33:38 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 16:00:59 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	draw_reset_pos(t_meta *m, t_point *pos);
 
 void	draw_init_move_counter(t_meta *m);
 void	draw_move_counter(t_meta *m);
-
+void	draw_finish_game(t_meta *m);
 
 void	draw_reset_on_map(t_meta *m, t_point *pos);
 void	draw_on_map(t_meta *m, t_point *pos, int image_index);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   meta.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrabby <files.associations>                +#+  +:+       +#+        */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 14:12:18 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 15:46:24 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #include "meta.h"
 #include "error.h"
 #include "player.h"
+#include "collect.h"
 #include "libft.h"
 
 // TODO add err codes 
@@ -35,6 +36,10 @@ static inline int	meta_create_1(t_meta *m, int fd)
 	stt = map_validate(m->map);
 	if (SUCCESS != stt)
 		return (stt);
+	m->collect = collect_create();
+	if (!m->collect)
+		return (ERROR_COLLECT_CREATE);
+	collect_set(m, map_count_collect(m));
 	stt = player_create(m);
 	if (SUCCESS != stt)
 		return (stt);
@@ -73,4 +78,6 @@ void	meta_free(t_meta *m)
 		map_free(m->map);
 	if (m->player)
 		player_free(m->player);
+	if (m->collect)
+		collect_free(m->collect);
 }

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:28:22 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 11:09:19 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 15:57:59 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	player_eval(t_meta *m, t_point_move point_move_func);
 void	player_inc_move_counter(t_meta *m);
 void	player_update_move_counter(t_meta *m);
 int		player_get_move_counter(t_meta *m);
+void	player_disable(t_meta *m);
 
 #endif

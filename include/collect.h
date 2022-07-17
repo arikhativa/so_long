@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_is.c                                           :+:      :+:    :+:   */
+/*   collect.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 10:25:59 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 15:52:34 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/17 15:38:53 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/17 15:48:53 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "object.h"
-#include "map.h"
+#ifndef COLLECT_H
+# define COLLECT_H
 
-int	map_is_wall(t_meta *m, t_point *p)
-{
-	return (WALL_CHAR == map_get_char(m, p));
-}
+# include "object.h"
 
-int	map_is_exit(t_meta *m, t_point *p)
-{
-	return (EXIT_CHAR == map_get_char(m, p));
-}
+t_collect	*collect_create(void);
+void		collect_free(t_collect *c);
+void		collect_decries(t_meta *m);
+int			collect_is_done(t_meta *c);
+void		collect_set(t_meta *m, int collect);
 
-int	map_is_collect(t_meta *m, t_point *p)
-{
-	return (COLLECT_CHAR == map_get_char(m, p));
-}
-
-
+#endif

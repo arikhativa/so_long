@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:47:20 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 11:09:04 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 15:54:34 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # define OBJECT_H
 
 # include "define.h"
+
+typedef struct s_collect
+{
+	int	num_of_collect;
+}	t_collect;
 
 typedef struct s_point
 {
@@ -23,6 +28,7 @@ typedef struct s_point
 
 typedef struct s_player
 {
+	int	is_enable;
 	int	move_counter;
 	t_point	*pos;
 }	t_player;
@@ -62,6 +68,7 @@ typedef struct s_meta
 	t_sprite	*sprite;
 	t_map		*map;
 	t_player	*player;
+	t_collect	*collect;
 }				t_meta;
 
 typedef void (*t_point_move)(t_point *p);
