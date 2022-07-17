@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:41:38 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 17:49:44 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 10:46:06 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "libft.h"
 #include "point.h"
 #include "object.h"
 #include "map.h"
@@ -33,7 +34,7 @@ t_map	*input_create_map2(char **src_tab, int tab_size)
 	t_point	size;
 	t_map	*m;
 
-	dest_tab = (char **)malloc(sizeof(char *) * tab_size);
+	dest_tab = (char **)ft_calloc(tab_size, sizeof(char *));
 	if (!dest_tab)
 		return (NULL);
 	tab_copy(dest_tab, src_tab);

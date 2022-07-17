@@ -6,12 +6,13 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:38:22 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:52:32 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 10:45:15 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+#include "libft.h"
 #include "point.h"
 #include "object.h"
 
@@ -43,7 +44,7 @@ void	find_player_pos_in_map(t_meta *m, t_point *pos)
 
 int player_create(t_meta *m)
 {
-	m->player = (t_player *)malloc(sizeof(t_player));
+	m->player = (t_player *)ft_calloc(1, sizeof(t_player));
 	if (!m->player)
 		return (ERROR);
 	m->player->pos = point_create();

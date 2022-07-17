@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 15:35:23 by yoav              #+#    #+#             */
-/*   Updated: 2022/07/15 15:41:37 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 11:10:56 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*split_str(char **origin, size_t i)
 	ret = ft_strndup(*origin, i);
 	if (!ret)
 		return (NULL);
-	tmp = ft_strndup((*origin) + i, ft_strlen(*origin) - i);
+	tmp = ft_strndup((*origin) + i, ft_strlen1(*origin) - i);
 	if (!tmp)
 	{
 		free(ret);
@@ -87,7 +87,7 @@ static char	*handle_eof(ssize_t stt, char **buff, char *ret)
 {
 	if (END_OF_FILE == stt)
 	{
-		if (0 != ft_strlen(*buff))
+		if (0 != ft_strlen1(*buff))
 			ret = *buff;
 		else
 		{

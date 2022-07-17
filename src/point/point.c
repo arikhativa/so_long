@@ -6,19 +6,20 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:05:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 10:11:48 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 10:46:36 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+#include "libft.h"
 #include "point.h"
 
 t_point	*point_create(void)
 {
 	t_point	*p;
 
-	p = (t_point *)malloc(sizeof(t_point));
+	p = (t_point *)ft_calloc(1, sizeof(t_point));
 	if (!p)
 		return (NULL);
 	return (p);

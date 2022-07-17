@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_get.c                                          :+:      :+:    :+:   */
+/*   tab_get_char.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 17:40:21 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 10:30:22 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/17 10:27:08 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/17 10:29:33 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tab.h"
 #include "object.h"
 
-t_point	*map_get_size(t_meta *m)
+char	tab_get_char(char **tab, t_point *p)
 {
-	return (m->map->size);
-}
-
-char	map_get_char(t_meta *m, t_point *pos)
-{
-	return (tab_get_char(m->map->tab, pos));
+	return (tab[p->y][p->x]);
 }

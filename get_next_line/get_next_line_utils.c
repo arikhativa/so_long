@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoav <yoav@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 15:35:25 by yoav              #+#    #+#             */
-/*   Updated: 2022/06/29 11:08:22 by yoav             ###   ########.fr       */
+/*   Updated: 2022/07/17 11:11:30 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stddef.h>
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen1(char *s)
 {
 	size_t	i;
 
@@ -25,7 +25,7 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
-void	ft_memcpy(char *d, char *s, size_t size)
+void	ft_memcpy1(char *d, char *s, size_t size)
 {
 	size_t	i;
 
@@ -72,13 +72,13 @@ char	*ft_join_str(char *buff, char *str)
 	size_t	j;
 	char	*ret;
 
-	i = ft_strlen(buff);
-	j = ft_strlen(str);
+	i = ft_strlen1(buff);
+	j = ft_strlen1(str);
 	ret = (char *)malloc(sizeof(char) * (i + j + 1));
 	if (!ret)
 		return (NULL);
-	ft_memcpy(ret, buff, i);
-	ft_memcpy((ret + i), str, j);
+	ft_memcpy1(ret, buff, i);
+	ft_memcpy1((ret + i), str, j);
 	ret[i + j] = '\0';
 	if (NULL != buff)
 		free(buff);

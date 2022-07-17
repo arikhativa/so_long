@@ -6,12 +6,13 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 14:52:30 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 13:21:06 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 10:45:29 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+#include "libft.h"
 #include "define.h"
 #include "point.h"
 #include "image.h"
@@ -22,7 +23,7 @@ t_image	*image_create(void)
 {
 	t_image	*img;
 
-	img = (t_image *)malloc(sizeof(t_image));
+	img = (t_image *)ft_calloc(1, sizeof(t_image));
 	if (!img)
 		return (NULL);
 	img->size = point_create();

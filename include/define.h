@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:19:53 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 11:41:32 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,9 @@
 # define MIN_HEIGHT_LEN	2
 # define BER_MAX_LINE	100
 # define MAP_INVALIDE_X	-1
+# define MOVE_COUNTER_TEXT	"Move Counter"
+# define MOVE_COUNTER_COLOR	15921152
+# define MOVE_COUNTER_X	2
 
 // Map Validate return value
 # define BAD_CHAR_TOP	10

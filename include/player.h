@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:28:22 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 10:20:02 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 11:09:19 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 #include "object.h"
 
-void	player_eval(int key, t_meta *m);
-
 t_point	*player_get_pos(t_meta *m);
 int player_create(t_meta *m);
 void	player_free(t_player *p);
@@ -24,9 +22,10 @@ void	player_free(t_player *p);
 t_point	*player_get_pos(t_meta *m);
 void	player_set_pos(t_meta *m, t_point *new_pos);
 
-void	player_eval_up(t_meta *m);
-void	player_eval_down(t_meta *m);
-void	player_eval_left(t_meta *m);
-void	player_eval_right(t_meta *m);
+void	player_eval(t_meta *m, t_point_move point_move_func);
+
+void	player_inc_move_counter(t_meta *m);
+void	player_update_move_counter(t_meta *m);
+int		player_get_move_counter(t_meta *m);
 
 #endif

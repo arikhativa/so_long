@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:47:20 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:37:21 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 11:09:04 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_point
 
 typedef struct s_player
 {
+	int	move_counter;
 	t_point	*pos;
 }	t_player;
 
@@ -62,5 +63,7 @@ typedef struct s_meta
 	t_map		*map;
 	t_player	*player;
 }				t_meta;
+
+typedef void (*t_point_move)(t_point *p);
 
 #endif

@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_get.c                                          :+:      :+:    :+:   */
+/*   player_move_counter.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 17:40:21 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 10:30:22 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/17 10:42:48 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/17 11:19:19 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tab.h"
 #include "object.h"
+#include "player.h"
+#include "draw.h"
 
-t_point	*map_get_size(t_meta *m)
+void	player_update_move_counter(t_meta *m)
 {
-	return (m->map->size);
-}
-
-char	map_get_char(t_meta *m, t_point *pos)
-{
-	return (tab_get_char(m->map->tab, pos));
+	player_inc_move_counter(m);
+	draw_move_counter(m);
 }

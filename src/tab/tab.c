@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:59:33 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:40:47 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 10:46:52 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,26 +76,3 @@ int	tab_count_char(char **tab, char c)
 	}
 	return (count);
 }
-
-// TODO remove?
-// char	**tab_create(t_point *size)
-// {
-// 	char	**tab;
-// 	int		i;
-
-// 	tab = (char **)malloc(sizeof(char *) * (size->y + 1));
-// 	if (!tab)
-// 		return (NULL);
-// 	i = 0;
-// 	while (i < size->y)
-// 	{
-// 		tab[i] = (char *)malloc(sizeof(char) * (size->x + 1));
-// 		if (!(tab[i]))
-// 		{
-// 			tab_free(tab);
-// 			return (NULL);
-// 		}
-// 		++i;
-// 	}
-// 	tab[i] = NULL;
-// }

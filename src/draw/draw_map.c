@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 17:19:14 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:18:06 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 11:17:38 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,6 @@ void	draw_map(t_meta *m)
 		}
 		y++;
 	}
+	draw_init_move_counter(m);
+	draw_move_counter(m);
 }
