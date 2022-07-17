@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/17 16:03:44 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/17 16:09:06 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,8 +53,8 @@ HED = $(wildcard $(HED_PATH)/*.h)
 .PHONY: clean fclean re all bonus
 .PRECIOUS: $(SRC) $(HED) $(LIBFT) $(LIBMLX) $(SRC_GNL)
 
-%.c: %.o
-	$(CC) $(CFLAGS)
+%.o: %.c $(HED)
+	$(CC) $(CFLAGS) -o $@ $(@:.o=.c)
 
 all: $(NAME)
 
