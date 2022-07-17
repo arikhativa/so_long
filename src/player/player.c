@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yrabby <files.associations>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:38:22 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 10:45:15 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 14:11:46 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ int player_create(t_meta *m)
 {
 	m->player = (t_player *)ft_calloc(1, sizeof(t_player));
 	if (!m->player)
-		return (ERROR);
+		return (ERROR_PLAYER_CREATE);
 	m->player->pos = point_create();
 	if (!m->player->pos)
 	{
 		free(m->player);
 		// TODO make sure m free is safe - maybe bzero in main
 		m->player = NULL;
-		return (ERROR);
+		return (ERROR_PLAYER_CREATE);
 	}
 	find_player_pos_in_map(m, m->player->pos);
 	return (SUCCESS);

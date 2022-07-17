@@ -6,7 +6,7 @@
 /*   By: yrabby <files.associations>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 13:30:10 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 14:11:38 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@
 # define ERROR_MLX_CONNECTION 100
 # define ERROR_SPRITE_CREATE 101
 # define ERROR_WINDOW_CREATE 102
+# define ERROR_PLAYER_CREATE 103
 
 
 #endif

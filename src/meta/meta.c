@@ -6,7 +6,7 @@
 /*   By: yrabby <files.associations>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 13:31:12 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 14:12:18 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int meta_init(t_meta *m, int fd)
 	if (SUCCESS != stt)
 	{
 		meta_free(m);
-		return (ERROR);
+		return (stt);
 	}
 	return (SUCCESS);
 }
