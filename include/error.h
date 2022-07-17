@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yrabby <files.associations>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 12:44:19 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 12:44:33 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 13:19:54 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERROR_H
 # define ERROR_H
 
-void	error_print(char *err_msg, int error_code);
+void	error_print(int error_code);
 
 #endif

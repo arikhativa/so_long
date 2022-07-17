@@ -6,7 +6,7 @@
 /*   By: yrabby <files.associations>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 13:14:17 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 13:21:57 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int main(int ac, char **av)
 	stt = meta_init(&m, fd);
 	if (SUCCESS != stt)
 	{
-
+		error_print(stt);
 		close(fd);
 		// system("leaks so_long");
 		return (ERROR);

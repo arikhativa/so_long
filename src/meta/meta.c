@@ -6,7 +6,7 @@
 /*   By: yrabby <files.associations>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 13:09:57 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 13:31:12 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ static inline int	meta_create_1(t_meta *m, int fd)
 		return (stt);
 	m->mlx = mlx_init();
 	if (!m->mlx)
-		return (ERROR);
+		return (ERROR_MLX_CONNECTION);
 	m->win = window_create(m->mlx, map_get_size(m));
 	if (!m->win)
-		return (ERROR);
+		return (ERROR_WINDOW_CREATE);
 	m->sprite = sprite_create_and_load(meta_get_mlx(m));
 	if (!m->sprite)
-		return (ERROR);
+		return (ERROR_SPRITE_CREATE);
 	return (SUCCESS);
 }
 

@@ -6,7 +6,7 @@
 /*   By: yrabby <files.associations>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 13:14:27 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 13:30:10 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@
 # define SUCCESS	0
 # define ERROR		-1
 # define ERROR_FD	-3
-# define ERROR_ALOCATION	-4
-# define ERROR_MLX_CONACTION -5
 # define ERROR_ARG -6
 
 # define ERROR_MAP_CREATE	99
@@ -92,6 +90,10 @@
 # define ERROR_PLAYER	40
 # define ERROR_COLLECT	41
 # define ERROR_EXIT	42
+
+# define ERROR_MLX_CONNECTION 100
+# define ERROR_SPRITE_CREATE 101
+# define ERROR_WINDOW_CREATE 102
 
 
 #endif
