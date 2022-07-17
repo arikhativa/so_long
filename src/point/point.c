@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:05:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 17:25:09 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 10:11:48 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,6 @@ t_point	*point_create_set(int x, int y)
 		return (NULL);
 	point_set(p, x, y);
 	return (p);
-}
-
-t_point	*point_create_copy(t_point *p)
-{
-	t_point	*new;
-
-	new = point_create();
-	if (!new)
-		return (NULL);
-	point_set(new, p->x, p->y);
-	return (new);
 }
 
 void	point_free(t_point *p)

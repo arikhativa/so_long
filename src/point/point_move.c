@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handler.h                                          :+:      :+:    :+:   */
+/*   point_move.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 17:16:46 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 10:20:27 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/17 10:07:12 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/17 10:08:30 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HANDLER_H
-# define HANDLER_H
+#include "object.h"
 
-# include "object.h"
+void	point_move_up(t_point *p)
+{
+	--p->y;
+}
 
-int	handler_key_press(int key, t_meta *m);
-int	handler_close(int key, t_meta *m);
+void	point_move_down(t_point *p)
+{
+	++p->y;
+}
 
-#endif
+void	point_move_left(t_point *p)
+{
+	--p->x;
+}
+
+void	point_move_right(t_point *p)
+{
+	++p->x;
+}

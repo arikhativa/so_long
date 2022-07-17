@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:28:22 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:52:09 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 10:20:02 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ int player_create(t_meta *m);
 void	player_free(t_player *p);
 
 t_point	*player_get_pos(t_meta *m);
+void	player_set_pos(t_meta *m, t_point *new_pos);
 
-void	player_down(t_meta *m);
-void	player_up(t_meta *m);
-void	player_left(t_meta *m);
-void	player_right(t_meta *m);
+void	player_eval_up(t_meta *m);
+void	player_eval_down(t_meta *m);
+void	player_eval_left(t_meta *m);
+void	player_eval_right(t_meta *m);
 
 #endif

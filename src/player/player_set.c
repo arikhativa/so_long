@@ -6,28 +6,15 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:32:56 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:34:20 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 10:16:28 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "object.h"
+#include "point.h"
+#include "player.h"
 
-void	player_down(t_meta *m)
+void	player_set_pos(t_meta *m, t_point *new_pos)
 {
-	++m->player->pos->y;
-}
-
-void	player_up(t_meta *m)
-{
-	--m->player->pos->y;
-}
-
-void	player_left(t_meta *m)
-{
-	--m->player->pos->x;
-}
-
-void	player_right(t_meta *m)
-{
-	++m->player->pos->x;
+	point_copy(player_get_pos(m), new_pos);
 }

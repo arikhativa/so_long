@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 17:15:29 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:57:28 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 10:21:51 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,17 @@ int	handler_close(int keycode, t_meta *m)
 	exit(0);
 }
 
-int	handler_key_press(int keycode, t_meta *m)
+int	handler_key_press(int key, t_meta *m)
 {
-	if (ESC == keycode)
-		handler_close(keycode, m);
-	if (KEY_UP == keycode || \
-		KEY_DOWN == keycode || \
-		KEY_LEFT == keycode || \
-		KEY_RIGHT == keycode)
-		player_eval(keycode, m);
-	printf("keyyy\n");
+	if (ESC == key)
+		handler_close(key, m);
+	else if  (KEY_DOWN == key)
+		player_eval_down(m);
+	else if  (KEY_UP == key)
+		player_eval_up(m);
+	else if  (KEY_LEFT == key)
+		player_eval_left(m);
+	else if  (KEY_RIGHT == key)
+		player_eval_right(m);
 	return (1);
 }
