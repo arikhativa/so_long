@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yrabby <files.associations>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 11:41:32 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 13:14:27 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,6 @@
 // Bool Value
 # define TRUE	1
 # define FALSE	0
-
-// Return Value
-# define SUCCESS	0
-# define ERROR		-1
-# define EMPTY_FILE	-2
-# define FD_ERROR	-3
-# define OPEN_ERROR	-4
-# define INVALID_MAP	-5
 
 // Chars
 # define VALID_CHARS	"01CEP"
@@ -66,19 +58,7 @@
 # define MOVE_COUNTER_X	2
 
 // Map Validate return value
-# define BAD_CHAR_TOP	10
-# define BAD_CHAR_MID	11
-# define BAD_CHAR_BOTTOM	12
 
-# define BAD_SIZE_TOP	20
-# define BAD_SIZE_MID	21
-# define BAD_SIZE_BOTTOM	22
-
-# define BAD_HEIGHT	30
-
-# define BAD_PLAYER	40
-# define BAD_COLLECT	41
-# define BAD_EXIT	42
 
 // Events (defined my mlx)
 # define KEY_PRESS	2
@@ -91,5 +71,27 @@
 # define KEY_RIGHT	 2
 
 # define GAME_NAME		"so-long"
+
+// Error Codes
+// Return Value
+# define SUCCESS	0
+# define ERROR		-1
+# define ERROR_FD	-3
+# define ERROR_ALOCATION	-4
+# define ERROR_MLX_CONACTION -5
+# define ERROR_ARG -6
+
+# define ERROR_MAP_CREATE	99
+# define ERROR_CHAR_TOP	10
+# define ERROR_CHAR_MID	11
+# define ERROR_CHAR_BOTTOM	12
+# define ERROR_SIZE_TOP	20
+# define ERROR_SIZE_MID	21
+# define ERROR_SIZE_BOTTOM	22
+# define ERROR_HEIGHT	30
+# define ERROR_PLAYER	40
+# define ERROR_COLLECT	41
+# define ERROR_EXIT	42
+
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   char_validate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yrabby <files.associations>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 10:57:06 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 11:16:49 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 13:07:43 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ static int	map_is_exit_valid(t_map *m)
 int	map_validate_special_char(t_map *m)
 {
 	if (!map_is_player_valid(m))
-		return (BAD_PLAYER);
+		return (ERROR_PLAYER);
 	if (!map_is_collect_valid(m))
-		return (BAD_COLLECT);
+		return (ERROR_COLLECT);
 	if (!map_is_exit_valid(m))
-		return (BAD_EXIT);
+		return (ERROR_EXIT);
 	return (SUCCESS);
 }

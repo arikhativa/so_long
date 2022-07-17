@@ -1,14 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   err_to_str.c                                       :+:      :+:    :+:   */
+/*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 11:18:56 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 12:44:45 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/17 12:44:19 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/17 12:44:33 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "define.h"
-#include "error.h"
+#ifndef ERROR_H
+# define ERROR_H
+
+void	error_print(char *err_msg, int error_code);
+
+#endif

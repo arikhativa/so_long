@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yrabby <files.associations>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 17:50:59 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 13:14:17 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 #include "tab.h"
 #include "input.h"
 #include "hook.h"
+#include "error.h"
 #include "draw.h"
 #include "map.h"
 
@@ -35,27 +36,29 @@ int main(int ac, char **av)
 	int	stt;
 
 	if (2 != ac)
-		return (ERROR);
-	fd = input_open(av[1]);
-	if (FD_ERROR == fd)
 	{
-		perror("fd issue: ");
+		error_print(ERROR_ARG);
+		return (ERROR);
+	}
+	fd = input_open(av[1]);
+	if (ERROR == fd)
+	{
+		error_print(ERROR_FD);
 		return (ERROR);
 	}
 	stt = meta_init(&m, fd);
 	if (SUCCESS != stt)
 	{
-		map_error_to_str(stt);
-		meta_free(&m);
+
 		close(fd);
-		system("leaks so_long");
-		return (INVALID_MAP);
+		// system("leaks so_long");
+		return (ERROR);
 	}
 	draw_map(&m);
 	init_hooks(&m);
 	mlx_loop(m.mlx);
 	meta_free(&m);
 	close(fd);
-	system("leaks so_long");
+	// system("leaks so_long");
 	return (SUCCESS);
 }

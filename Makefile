@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
+#    By: yrabby <files.associations>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/16 11:39:58 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/17 13:18:23 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,18 +82,18 @@ re: fclean all
 
 # Docker TODO
 IMG=arikhatica/minilibx:ubuntu
-NAME=minilibx
+DOCKER_NAME=minilibx
 WORKDIR=/home
 
 build:
 	docker build -t $(IMG) .
 
 run:
-	docker run -d -it -v ~:$(WORKDIR)/ --name $(NAME) $(IMG) -p 555:555
+	docker run -d -it -v ~:$(WORKDIR)/ --name $(DOCKER_NAME) $(IMG) -p 555:555
 
 stop:
-	docker rm -f $(NAME)
+	docker rm -f $(DOCKER_NAME)
 
 enter:
-	docker exec -it $(NAME) bash
+	docker exec -it $(DOCKER_NAME) bash
 

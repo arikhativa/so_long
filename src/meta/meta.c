@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   meta.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yrabby <files.associations>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:48:43 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 13:09:57 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include "map.h"
 #include "point.h"
 #include "meta.h"
+#include "error.h"
 #include "player.h"
 #include "libft.h"
 
@@ -30,7 +31,7 @@ static inline int	meta_create_1(t_meta *m, int fd)
 
 	m->map = input_create_map(fd);
 	if (!m->map)
-		return (ERROR);
+		return (ERROR_MAP_CREATE);
 	stt = map_validate(m->map);
 	if (SUCCESS != stt)
 		return (stt);

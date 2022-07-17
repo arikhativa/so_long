@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:48:38 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 10:37:48 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 12:52:42 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	is_mid_line_size_valid(char *line, int first_line_len);
 int	is_topbot_line_chars_valid(const char *line, int size);
 int	is_mid_line_chars_valid(const char *line, int size);
 
-void	map_error_to_str(int err);
 t_point	*map_get_size(t_meta *m);
 char	map_get_char(t_meta *m, t_point *pos);
 int	map_is_wall(t_meta *m, t_point *p);
