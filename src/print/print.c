@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   collect_get.c                                      :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 15:38:06 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 16:30:07 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/17 16:31:32 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/17 16:33:36 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+#include "player.h"
 #include "object.h"
 
-int	collect_is_done(t_meta *m)
+void	print_move_counter(t_meta *m)
 {
-	return (0 == m->collect->num_of_collect);
+	ft_printf("Current Move: %d\n", player_get_move_counter(m));
 }

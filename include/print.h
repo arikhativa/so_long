@@ -1,18 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   collect_get.c                                      :+:      :+:    :+:   */
+/*   print.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 15:38:06 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 16:30:07 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/17 16:33:05 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/17 16:33:14 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "object.h"
 
-int	collect_is_done(t_meta *m)
-{
-	return (0 == m->collect->num_of_collect);
-}
+void	print_move_counter(t_meta *m);
