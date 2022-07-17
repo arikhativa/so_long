@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:41:38 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 10:46:06 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 15:20:02 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,13 @@ t_map	*input_create_map2(char **src_tab, int tab_size)
 	if (!dest_tab)
 		return (NULL);
 	tab_copy(dest_tab, src_tab);
-	m = map_create(point_set(&size, MAP_INVALIDE_X, tab_size - 1), dest_tab);
+	m = map_create(point_set(&size, MAP_INVALID_X, tab_size - 1), dest_tab);
 	if (!m)
 	{
 		free(dest_tab);
 		return (NULL);
 	}
+	map_clean_player(m);
 	return (m);
 }
 

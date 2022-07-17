@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrabby <files.associations>                +#+  +:+       +#+        */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 14:11:38 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 15:11:23 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@
 # define MIN_WIDTH_LEN	2
 # define MIN_HEIGHT_LEN	2
 # define BER_MAX_LINE	100
-# define MAP_INVALIDE_X	-1
+# define MAP_INVALID_X	-1
 # define MOVE_COUNTER_TEXT	"Move Counter"
 # define MOVE_COUNTER_COLOR	15921152
 # define MOVE_COUNTER_X	2
@@ -62,7 +62,7 @@
 
 // Events (defined my mlx)
 # define KEY_PRESS	2
-# define DESTORY_WINDOW	17
+# define DESTROY_WINDOW	17
 # define ESC	53
 # define RESET	15
 # define KEY_UP		13

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 11:45:09 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:56:24 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/17 15:11:21 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@
 void	init_hooks(t_meta *m)
 {
 	mlx_hook(m->win->ref, KEY_PRESS, 0, handler_key_press, m);
-	mlx_hook(m->win->ref, DESTORY_WINDOW, 0, handler_close, m);
+	mlx_hook(m->win->ref, DESTROY_WINDOW, 0, handler_close, m);
 }
