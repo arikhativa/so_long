@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/18 13:36:02 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/18 13:55:42 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,3 +91,21 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+# Docker
+
+# IMG=arikhativa/minilibx:ubuntu
+# CONTAINER_NAME=so_long
+# WORKDIR=/home
+
+# run:
+# 	docker run -d -it -v $(HOME):$(WORKDIR)/ --name $(NAME) $(IMG)
+
+# stop:
+# 	docker rm -f $(NAME)
+
+# enter:
+# 	docker exec -it $(NAME) bash
+
+# build:
+# 	docker build -t $(IMG) .
