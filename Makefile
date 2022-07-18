@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/18 15:55:48 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/18 15:59:05 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,8 +81,8 @@ $(LIB):
 	$(MAKE) all -sC ./$(LIB_PATH)
 
 $(NAME): $(OBJ) $(LIB) $(LIBMLX)
-# $(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
-	$(CC) -fsanitize=address $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
+	$(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
+# $(CC) -fsanitize=address $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
 
 clean:
 	$(RM) $(OBJ)
