@@ -1,3 +1,4 @@
 .vscode
 so_long
 *.o
+*.a
