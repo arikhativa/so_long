@@ -3,99 +3,85 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
+#    By: yoav <yoav@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/17 16:09:06 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/18 11:06:51 by yoav             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-HED_PATH = include
+# lib42
+LIB_NAME = lib42.a
+LIB_PATH = lib42
+LIB  = $(addprefix $(LIB_PATH)/, $(LIB_NAME))
 
-# libft + printf
-LIBFT_NAME = libftprintf.a
-LIBFT_PATH = ft_printf/
-LIBFT  = $(addprefix $(LIBFT_PATH), $(LIBFT_NAME))
+# mlx
+# LIBMLX_NAME = libmlx.a
+# LIBMLX_PATH = libmlx
+# LIBMLX = $(addprefix $(LIBMLX_PATH)/, $(LIBMLX_NAME))
+# LIBMLX_HED_DIR = $(LIBMLX_PATH)
+# MLX_CFLAGS = "-O2 -Wno-deprecated-declarations"
 
-# normal libft
-# LIBFT_NAME = libft.a
-# LIBFT_PATH = libft/
-# LIBFT  = $(addprefix $(LIBFT_PATH), $(LIBFT_NAME))
-
-# LIBMLX_PATH = libmlx-linux/
-# LIBMLX_NAME = libmlx_Linux.a
-# LIBMLX  = $(addprefix $(LIBMLX_PATH), $(LIBMLX_NAME))
-LIBMLX_PATH = libmlx/
+# mlx - linux
 LIBMLX_NAME = libmlx.a
-LIBMLX  = $(addprefix $(LIBMLX_PATH), $(LIBMLX_NAME))
-
-GNL = get_next_line.c get_next_line_utils.c
-GNL_PATH = get_next_line/
-SRC_GNL = $(addprefix $(GNL_PATH), $(GNL))
-
+LIBMLX_PATH = minilibx-linux
+LIBMLX = $(addprefix $(LIBMLX_PATH)/, $(LIBMLX_NAME))
+LIBMLX_HED_DIR = $(LIBMLX_PATH)
 MLX_CFLAGS = "-O2 -Wno-deprecated-declarations"
+
+# gnl
+GNL_DIR = $(LIB_PATH)/get_next_line
+GNL_HED_DIR = $(GNL_DIR)
+
+# ft_printf
+FT_PRINTF_DIR = $(LIB_PATH)/ft_printf
+FT_PRINTF_HED_DIR = $(FT_PRINTF_DIR)
+
+# libft
+LIBFT_DIR = $(FT_PRINTF_DIR)/libft
+LIBFT_HED_DIR = $(LIBFT_DIR)
+
+# so_long
+SO_LONG_HED_DIR = include
+SO_LONG_HED = $(addprefix $(SO_LONG_HED_DIR)/, $(wildcard *.h))
+SRC = $(wildcard src/**/*.c) $(SRC_GNL)
+OBJ = $(SRC:.c=.o)
+
+# header
 
 CC = gcc
 #  TODO
-CFLAGS = -c -I$(HED_PATH) -I$(LIBFT_PATH)/include -I$(LIBFT_PATH)/libft -I$(LIBMLX_PATH) -I$(GNL_PATH)
-# CFLAGS = -Wall -Werror -Wextra -c -I$(HED_PATH) -I$(LIBFT_PATH) -I$(LIBMLX_PATH)
-LDFLAGS = -L $(LIBFT_PATH) -L $(LIBMLX_PATH)
-# LDLIBS = -lft -lmlx -lXext -lX11 -lbsd
-LDLIBS = -lftprintf -lmlx -framework OpenGL -framework AppKit
-RM = rm -f
+# CFLAGS = -Wall -Werror -Wextra
+HED_INCLUD = -I$(LIBFT_HED_DIR) -I$(FT_PRINTF_HED_DIR) -I$(GNL_HED_DIR) -I$(SO_LONG_HED_DIR) -I$(LIBMLX_HED_DIR)
+CFLAGS = -c
+LDFLAGS = -L $(LIB_PATH) -L $(LIBMLX_PATH)
+LDLIBS = -l42 -lmlx -lXext -lX11
+# LDLIBS = -lftprintf -lmlx -framework OpenGL -framework AppKit
 
-SRC = $(wildcard src/**/*.c) $(SRC_GNL)
-OBJ = $(SRC:.c=.o)
-HED = $(wildcard $(HED_PATH)/*.h)
+.PHONY: clean fclean re all
 
-.PHONY: clean fclean re all bonus
-.PRECIOUS: $(SRC) $(HED) $(LIBFT) $(LIBMLX) $(SRC_GNL)
-
-%.o: %.c $(HED)
-	$(CC) $(CFLAGS) -o $@ $(@:.o=.c)
+%.o: %.c $(SO_LONG_HED)
+	$(CC) $(CFLAGS) $< $(HED_INCLUD) -o $@ 
 
 all: $(NAME)
 
 $(LIBMLX):
 	$(MAKE) -sC ./$(LIBMLX_PATH) CFLAGS=$(MLX_CFLAGS)
 
-$(LIBFT):
-	$(MAKE) bonus -sC ./$(LIBFT_PATH)
+$(LIB):
+	$(MAKE) all -sC ./$(LIB_PATH)
 
-$(NAME): $(OBJ) $(LIBFT) $(LIBMLX) $(HED) Makefile
+$(NAME): $(OBJ) $(LIB) $(LIBMLX)
 	$(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
 
-bonus: $(NAME) 
-
 clean:
-# $(MAKE) clean -C ./$(LIBMLX_PATH)
-# $(MAKE) clean -C ./$(LIBFT_PATH)
 	$(RM) $(OBJ)
 
 fclean: clean
-# $(MAKE) clean -C ./$(LIBMLX_PATH)
-# $(MAKE) fclean -C ./$(LIBFT_PATH)
+	$(MAKE) clean -sC ./$(LIBMLX_PATH)
+	$(MAKE) fclean -sC ./$(LIB_PATH)
 	$(RM) $(NAME)
 
 re: fclean all
-
-
-# Docker TODO
-IMG=arikhatica/minilibx:ubuntu
-DOCKER_NAME=minilibx
-WORKDIR=/home
-
-build:
-	docker build -t $(IMG) .
-
-run:
-	docker run -d -it -v ~:$(WORKDIR)/ --name $(DOCKER_NAME) $(IMG) -p 555:555
-
-stop:
-	docker rm -f $(DOCKER_NAME)
-
-enter:
-	docker exec -it $(DOCKER_NAME) bash
-

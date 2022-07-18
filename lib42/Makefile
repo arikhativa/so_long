@@ -6,7 +6,7 @@
 #    By: yoav <yoav@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 11:26:43 by yoav              #+#    #+#              #
-#    Updated: 2022/07/18 09:35:22 by yoav             ###   ########.fr        #
+#    Updated: 2022/07/18 11:16:16 by yoav             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ HED = $(GNL_HED)
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -I$(GNL_HED_DIR)
-ARFLAGS = rcs
+ARFLAGS = rs
 
 %.o: %.c $(HED)
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -37,7 +37,8 @@ $(LIB_FT_PRINTF):
 	$(MAKE) -sC $(FT_PRINTF_PATH)
 
 $(NAME): $(GNL_OBJ) $(LIB_FT_PRINTF)
-	$(AR) $(ARFLAGS) $@ $^
+	cp $(LIB_FT_PRINTF) $(NAME)
+	$(AR) $(ARFLAGS) $@ $(GNL_OBJ)
 
 clean:
 	$(MAKE) clean -sC $(FT_PRINTF_PATH)

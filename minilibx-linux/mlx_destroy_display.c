@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hook.c                                             :+:      :+:    :+:   */
+/*   mlx_destroy_display.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoav <yoav@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 11:45:09 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 10:40:54 by yoav             ###   ########.fr       */
+/*   Created: 2020/10/03 18:56:35 by mg                #+#    #+#             */
+/*   Updated: 2020/10/04 01:55:35 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "object.h"
-#include "mlx.h"
-#include "meta.h"
-#include "handler.h"
+#include "mlx_int.h"
 
-#include <stddef.h>
-
-void	init_hooks(t_meta *m)
+int	mlx_destroy_display(t_xvar *xvar)
 {
-	mlx_hook(m->win->ref, KEY_PRESS, 0, handler_key_press, m);
-	mlx_hook(m->win->ref, DESTROY_WINDOW, 0, handler_close, m);
+	XCloseDisplay(xvar->display);
 }
