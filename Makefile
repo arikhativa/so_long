@@ -6,7 +6,7 @@
 #    By: yoav <yoav@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/18 11:06:51 by yoav             ###   ########.fr        #
+#    Updated: 2022/07/18 11:23:17 by yoav             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,6 @@ LIBMLX_NAME = libmlx.a
 LIBMLX_PATH = minilibx-linux
 LIBMLX = $(addprefix $(LIBMLX_PATH)/, $(LIBMLX_NAME))
 LIBMLX_HED_DIR = $(LIBMLX_PATH)
-MLX_CFLAGS = "-O2 -Wno-deprecated-declarations"
 
 # gnl
 GNL_DIR = $(LIB_PATH)/get_next_line
@@ -58,7 +57,7 @@ HED_INCLUD = -I$(LIBFT_HED_DIR) -I$(FT_PRINTF_HED_DIR) -I$(GNL_HED_DIR) -I$(SO_L
 CFLAGS = -c
 LDFLAGS = -L $(LIB_PATH) -L $(LIBMLX_PATH)
 LDLIBS = -l42 -lmlx -lXext -lX11
-# LDLIBS = -lftprintf -lmlx -framework OpenGL -framework AppKit
+# LDLIBS = -l -lmlx -framework OpenGL -framework AppKit
 
 .PHONY: clean fclean re all
 
@@ -68,7 +67,8 @@ LDLIBS = -l42 -lmlx -lXext -lX11
 all: $(NAME)
 
 $(LIBMLX):
-	$(MAKE) -sC ./$(LIBMLX_PATH) CFLAGS=$(MLX_CFLAGS)
+	$(MAKE) -sC ./$(LIBMLX_PATH)
+# $(MAKE) -sC ./$(LIBMLX_PATH) CFLAGS=$(MLX_CFLAGS)
 
 $(LIB):
 	$(MAKE) all -sC ./$(LIB_PATH)
