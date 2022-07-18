@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 11:45:09 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 18:11:02 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 19:33:53 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include "mlx.h"
 #include "meta.h"
 #include "handler.h"
-
-#include <stddef.h>
 
 void	init_hooks(t_meta *m)
 {

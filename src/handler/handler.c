@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 17:15:29 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:01:25 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 19:33:19 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	handler_close(int key, t_meta *m)
 {
 	if (ESC == key)
 		meta_free(m);
-	system("leaks so_long");
 	exit(0);
 }
 

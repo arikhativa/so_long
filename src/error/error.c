@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 12:30:49 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:01:47 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 19:33:05 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	error_print1(int err)
 	else if (ERROR_COLLECT == err)
 		error_print_msg("Map error: missing collectable", err);
 	else if (ERROR_EXIT == err)
-		error_print_msg("Map error: missing exitt", err);
+		error_print_msg("Map error: missing exit", err);
 }
 
 void	error_print2(int err)
