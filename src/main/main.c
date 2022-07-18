@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:58:54 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 19:02:37 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@
 #include "draw.h"
 #include "map.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_meta	m;
-	int	fd;
-	int	stt;
+	int		fd;
+	int		stt;
 
 	if (2 != ac)
 	{
@@ -49,13 +49,11 @@ int main(int ac, char **av)
 	if (SUCCESS != stt)
 	{
 		error_print(stt);
-		system("leaks so_long");
 		return (ERROR);
 	}
 	draw_map(&m);
 	init_hooks(&m);
-	mlx_loop(m.mlx);
+	mlx_loop(meta_get_mlx(&m));
 	meta_free(&m);
-	system("leaks so_long");
 	return (SUCCESS);
 }

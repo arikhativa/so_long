@@ -6,14 +6,13 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 15:12:56 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 18:40:01 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 18:59:43 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "object.h"
 #include "libft.h"
 #include "map.h"
-
 
 static void	remove_player_if_needed(int *should_remove, char *ptr)
 {
@@ -42,7 +41,7 @@ void	map_clean_player(t_map *m)
 		while (tab[y][x])
 		{
 			remove_player_if_needed(&remove_player, &(tab[y][x]));
-			++x;	
+			++x;
 		}
 		++y;
 	}

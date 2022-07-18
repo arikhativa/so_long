@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 10:25:59 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:50:56 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 18:59:04 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,3 @@ int	map_is_collect(t_meta *m, t_point p)
 {
 	return (COLLECT_CHAR == map_get_char(m, p));
 }
-
-

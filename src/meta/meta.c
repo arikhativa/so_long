@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 18:42:26 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 18:58:57 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static inline int	meta_create_1(t_meta *m, int fd)
 	return (meta_create_2(m));
 }
 
-int meta_init(t_meta *m, int fd)
+int	meta_init(t_meta *m, int fd)
 {
 	int		stt;
 

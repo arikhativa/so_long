@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 11:07:30 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 18:11:44 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 19:02:27 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@
 
 void	draw_init_move_counter(t_meta *m)
 {
-	mlx_string_put(meta_get_mlx(m),
-					meta_get_win(m),
-					0,
-					0,
-					MOVE_COUNTER_COLOR,
-					MOVE_COUNTER_TEXT);
+	mlx_string_put(meta_get_mlx(m), \
+	meta_get_win(m), \
+	0, \
+	0, \
+	MOVE_COUNTER_COLOR, \
+	MOVE_COUNTER_TEXT);
 }
 
 void	draw_clear_move_counter(t_meta *m)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrabby <files.associations>                +#+  +:+       +#+        */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 12:30:49 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 14:15:58 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 19:01:47 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ static void	error_print1(int err)
 		error_print_msg("Map error: missing exitt", err);
 }
 
-void error_print2(int err)
+void	error_print2(int err)
 {
 	if (ERROR_MLX_CONNECTION == err)
 		error_print_msg("MLX error: failed to init mlx", err);
 	else if (ERROR_ARG == err)
-		error_print_msg("Argument error: program expect exectly one argument", err);
+		error_print_msg("Argument error: expect exactly one argument", err);
 	else if (ERROR_FD == err)
 		error_print_msg("fd error: failed to open file", err);
 	else if (ERROR_MAP_CREATE == err)

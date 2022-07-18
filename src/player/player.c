@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:38:22 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 18:42:35 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 18:58:50 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	find_player_pos_in_map(t_meta *m)
 	}
 }
 
-int player_create(t_meta *m)
+int	player_create(t_meta *m)
 {
 	m->player = (t_player *)ft_calloc(1, sizeof(t_player));
 	if (!m->player)
