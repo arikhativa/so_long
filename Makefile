@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/18 15:59:05 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/18 18:39:54 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,9 +62,7 @@ OBJ = $(SRC:.c=.o)
 # header
 
 CC = gcc
-#  TODO
-# CFLAGS = -Wall -Werror -Wextra
-CFLAGS = -c
+CFLAGS = -Wall -Werror -Wextra -c
 HED_INCLUD = -I$(LIBFT_HED_DIR) -I$(FT_PRINTF_HED_DIR) -I$(GNL_HED_DIR) -I$(SO_LONG_HED_DIR) -I$(LIBMLX_HED_DIR)
 
 .PHONY: clean fclean re all

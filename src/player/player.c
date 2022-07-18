@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:38:22 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:38:58 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 18:42:35 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include "player.h"
 #include "object.h"
 
-// TODO make generic
 static void	find_player_pos_in_map(t_meta *m)
 {
 	char	**tab;

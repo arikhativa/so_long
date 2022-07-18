@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 15:12:56 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 15:26:50 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 18:40:01 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	map_clean_player(t_map *m)
 	int		y;
 	int		x;
 	char	**tab;
-	char	*ptr;
 
 	tab = m->tab;
 	y = 0;

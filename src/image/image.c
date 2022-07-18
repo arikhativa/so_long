@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 14:52:30 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:18:26 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 18:40:39 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,10 @@ t_image	*image_create(void)
 
 void	image_free(t_image *img, void *mlx)
 {
-	// mlx_destroy_image(mlx, img->ref);
+	mlx_destroy_image(mlx, img->ref);
 	free(img);
 }
 
-// TODO 
 static void	init_path(char path[MAX_PATH], char *file_name)
 {
 	char	*xpm_path;

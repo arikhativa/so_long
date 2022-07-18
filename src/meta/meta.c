@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 18:14:54 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 18:42:26 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,21 @@
 #include "collect.h"
 #include "libft.h"
 
-// TODO add err codes 
+static inline int	meta_create_2(t_meta *m)
+{
+	m->mlx = mlx_init();
+	if (!m->mlx)
+		return (ERROR_MLX_CONNECTION);
+	m->win = mlx_new_window(m->mlx, map_get_size(m).x * IMG_SIZE, \
+		(map_get_size(m).y + 1) * IMG_SIZE, GAME_NAME);
+	if (!m->win)
+		return (ERROR_WINDOW_CREATE);
+	m->sprite = sprite_create_and_load(meta_get_mlx(m));
+	if (!m->sprite)
+		return (ERROR_SPRITE_CREATE);
+	return (SUCCESS);
+}
+
 static inline int	meta_create_1(t_meta *m, int fd)
 {
 	int	stt;
@@ -42,19 +56,7 @@ static inline int	meta_create_1(t_meta *m, int fd)
 	stt = player_create(m);
 	if (SUCCESS != stt)
 		return (stt);
-	m->mlx = mlx_init();
-	if (!m->mlx)
-		return (ERROR_MLX_CONNECTION);
-	m->win = mlx_new_window(m->mlx, \
-		map_get_size(m).x * IMG_SIZE, \
-		(map_get_size(m).y + 1) * IMG_SIZE, \
-		GAME_NAME);
-	if (!m->win)
-		return (ERROR_WINDOW_CREATE);
-	m->sprite = sprite_create_and_load(meta_get_mlx(m));
-	if (!m->sprite)
-		return (ERROR_SPRITE_CREATE);
-	return (SUCCESS);
+	return (meta_create_2(m));
 }
 
 int meta_init(t_meta *m, int fd)

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:32:56 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:26:26 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 18:43:33 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ void	player_disable(t_meta *m)
 {
 	m->player->is_enable = FALSE;
 }
-
