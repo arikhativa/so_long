@@ -6,10 +6,15 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 16:33:05 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 16:33:14 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 13:24:29 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "object.h"
+#ifndef PRINT_H
+# define PRINT_H
+
+# include "object.h"
 
 void	print_move_counter(t_meta *m);
+
+#endif
