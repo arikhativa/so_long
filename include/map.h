@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:48:38 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:48:08 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 15:56:00 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ int	map_is_exit(t_meta *m, t_point p);
 
 void	map_clean_player(t_map *m);
 int		map_count_collect(t_meta *m);
-char	map_set(t_meta *m, t_point p, char c);
+void	map_set(t_meta *m, t_point p, char c);
 
 #endif

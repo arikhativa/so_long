@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/18 14:54:18 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/18 15:55:48 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ LIBFT_HED_DIR = $(LIBFT_DIR)
 
 # so_long
 SO_LONG_HED_DIR = include
-SO_LONG_HED = $(addprefix $(SO_LONG_HED_DIR)/, $(wildcard *.h))
+SO_LONG_HED = $(wildcard $(SO_LONG_HED_DIR)/*.h)
 SRC = $(wildcard src/**/*.c) $(SRC_GNL)
 OBJ = $(SRC:.c=.o)
 
@@ -81,8 +81,8 @@ $(LIB):
 	$(MAKE) all -sC ./$(LIB_PATH)
 
 $(NAME): $(OBJ) $(LIB) $(LIBMLX)
-	$(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
-# $(CC) -fsanitize=address $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
+# $(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
+	$(CC) -fsanitize=address $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
 
 clean:
 	$(RM) $(OBJ)

@@ -6,12 +6,11 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:59:33 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:39:44 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 15:51:21 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 #include "libft.h"
 #include "object.h"

@@ -6,14 +6,14 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 15:44:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:47:02 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 15:52:07 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tab.h"
 #include "object.h"
 
-char	map_set(t_meta *m, t_point p, char c)
+void	map_set(t_meta *m, t_point p, char c)
 {
 	tab_set(m->map->tab, p, c);
 }
