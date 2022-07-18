@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 18:58:57 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 19:13:19 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 #include "error.h"
 #include "player.h"
 #include "collect.h"
+#include "hook.h"
+#include "draw.h"
 #include "libft.h"
 
 static inline int	meta_create_2(t_meta *m)
@@ -69,6 +71,8 @@ int	meta_init(t_meta *m, int fd)
 		meta_free(m);
 		return (stt);
 	}
+	draw_map(m);
+	init_hooks(m);
 	return (SUCCESS);
 }
 

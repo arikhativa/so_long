@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 17:19:14 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:21:00 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 19:14:51 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 void	draw_map(t_meta *m)
 {
-	t_point pos;
-	int	y;
-	int	x;
+	t_point	pos;
+	int		y;
+	int		x;
 
 	y = 0;
 	while (y < m->map->size.y)

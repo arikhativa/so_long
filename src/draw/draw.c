@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:12:33 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 18:15:35 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 19:15:28 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	draw_image(t_meta *m, t_point pos, int image_index)
 
 void	draw_reset_on_map(t_meta *m, t_point pos)
 {
-	t_point tmp;
+	t_point	tmp;
 
 	tmp = point_move_down(pos);
 	draw_reset_pos(m, tmp);
@@ -40,7 +40,7 @@ void	draw_reset_on_map(t_meta *m, t_point pos)
 
 void	draw_on_map(t_meta *m, t_point pos, int image_index)
 {
-	t_point tmp;
+	t_point	tmp;
 
 	tmp = point_move_down(pos);
 	draw_image(m, tmp, image_index);

@@ -6,14 +6,14 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:08:09 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 18:56:16 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 19:18:46 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HOOK_H
 # define HOOK_H
 
-#include "object.h"
+# include "object.h"
 
 void	init_hooks(t_meta *m);
 

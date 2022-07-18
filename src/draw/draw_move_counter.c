@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 11:07:30 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:02:27 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 19:14:41 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	draw_init_move_counter(t_meta *m)
 
 void	draw_clear_move_counter(t_meta *m)
 {
-	t_point map_size;
-	t_point pos;
+	t_point	map_size;
+	t_point	pos;
 	int		i;
 
 	map_size = map_get_size(m);
@@ -50,16 +50,15 @@ void	draw_clear_move_counter(t_meta *m)
 
 void	draw_move_counter(t_meta *m)
 {
-	char *str;
+	char	*str;
 
 	str = ft_itoa(player_get_move_counter(m));
 	draw_clear_move_counter(m);
-	mlx_string_put(meta_get_mlx(m),
-					meta_get_win(m),
-					MOVE_COUNTER_X * IMG_SIZE,
-					0,
-					MOVE_COUNTER_COLOR,
-					str);
+	mlx_string_put(meta_get_mlx(m), \
+		meta_get_win(m), \
+		MOVE_COUNTER_X * IMG_SIZE, \
+		0, \
+		MOVE_COUNTER_COLOR, \
+		str);
 	free(str);
 }
-

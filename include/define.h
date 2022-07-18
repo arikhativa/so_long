@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 16:01:58 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 19:19:17 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,6 @@
 # define MOVE_COUNTER_X	2
 # define END_MSG_I	7
 
-// Map Validate return value
-
-
 // Events (defined my mlx)
 # define KEY_PRESS	2
 # define DESTROY_WINDOW	17
@@ -97,6 +94,5 @@
 # define ERROR_WINDOW_CREATE 102
 # define ERROR_PLAYER_CREATE 103
 # define ERROR_COLLECT_CREATE 104
-
 
 #endif

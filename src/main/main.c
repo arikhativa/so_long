@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:02:37 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 19:13:06 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ int	main(int ac, char **av)
 		error_print(stt);
 		return (ERROR);
 	}
-	draw_map(&m);
-	init_hooks(&m);
 	mlx_loop(meta_get_mlx(&m));
 	meta_free(&m);
 	return (SUCCESS);
