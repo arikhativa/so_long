@@ -3,14 +3,29 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yoav <yoav@student.42.fr>                  +#+  +:+       +#+         #
+#    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/18 11:40:24 by yoav             ###   ########.fr        #
+#    Updated: 2022/07/18 13:36:02 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
+
+ifeq ($(OS),linux)
+LIBMLX_NAME = libmlx_Linux.a
+LIBMLX_PATH = minilibx-linux
+LDFLAGS = -L$(LIB_PATH) -L$(LIBMLX_PATH) -L/usr/lib
+LDLIBS = -l42 -lmlx -lmlx_Linux -lm -lz -lXext -lX11
+endif
+
+ifndef ($(OS))
+LIBMLX_NAME = libmlx.a
+LIBMLX_PATH = libmlx
+MLX_CFLAGS = " -Wno-deprecated-declarations"
+LDFLAGS = -L$(LIB_PATH) -L$(LIBMLX_PATH)
+LDLIBS = -l42 -lmlx -framework OpenGL -framework AppKit
+endif
 
 # lib42
 LIB_NAME = lib42.a
@@ -18,15 +33,10 @@ LIB_PATH = lib42
 LIB  = $(addprefix $(LIB_PATH)/, $(LIB_NAME))
 
 # mlx
-# LIBMLX_NAME = libmlx.a
-# LIBMLX_PATH = libmlx
-# LIBMLX = $(addprefix $(LIBMLX_PATH)/, $(LIBMLX_NAME))
-# LIBMLX_HED_DIR = $(LIBMLX_PATH)
-# MLX_CFLAGS = "-O2 -Wno-deprecated-declarations"
+LIBMLX = $(addprefix $(LIBMLX_PATH)/, $(LIBMLX_NAME))
+LIBMLX_HED_DIR = $(LIBMLX_PATH)
 
-# mlx - linux
-LIBMLX_NAME = libmlx_Linux.a
-LIBMLX_PATH = minilibx-linux
+# mlx
 LIBMLX = $(addprefix $(LIBMLX_PATH)/, $(LIBMLX_NAME))
 LIBMLX_HED_DIR = $(LIBMLX_PATH)
 
@@ -53,12 +63,8 @@ OBJ = $(SRC:.c=.o)
 CC = gcc
 #  TODO
 # CFLAGS = -Wall -Werror -Wextra
-HED_INCLUD = -I$(LIBFT_HED_DIR) -I$(FT_PRINTF_HED_DIR) -I$(GNL_HED_DIR) -I$(SO_LONG_HED_DIR) -I$(LIBMLX_HED_DIR)
 CFLAGS = -c
-LDFLAGS = -L$(LIB_PATH) -L$(LIBMLX_PATH) -L/usr/lib
-LDLIBS = -l42 -lmlx -lmlx_Linux -lm -lz -lXext -lX11
-# LDFLAGS = -L $(LIB_PATH) -L $(LIBMLX_PATH)
-# LDLIBS = -l -lmlx -framework OpenGL -framework AppKit
+HED_INCLUD = -I$(LIBFT_HED_DIR) -I$(FT_PRINTF_HED_DIR) -I$(GNL_HED_DIR) -I$(SO_LONG_HED_DIR) -I$(LIBMLX_HED_DIR)
 
 .PHONY: clean fclean re all
 
@@ -68,8 +74,7 @@ LDLIBS = -l42 -lmlx -lmlx_Linux -lm -lz -lXext -lX11
 all: $(NAME)
 
 $(LIBMLX):
-	$(MAKE) -sC ./$(LIBMLX_PATH)
-# $(MAKE) -sC ./$(LIBMLX_PATH) CFLAGS=$(MLX_CFLAGS)
+	$(MAKE) -sC ./$(LIBMLX_PATH) CFLAGS+=$(MLX_CFLAGS)
 
 $(LIB):
 	$(MAKE) all -sC ./$(LIB_PATH)
