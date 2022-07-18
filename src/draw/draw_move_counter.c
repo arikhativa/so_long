@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 11:07:30 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:06:37 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 18:11:44 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@
 #include "point.h"
 #include "map.h"
 #include "draw.h"
+#include "meta.h"
 #include "define.h"
 
 void	draw_init_move_counter(t_meta *m)
 {
-	mlx_string_put(m->mlx,
-					m->win->ref,
+	mlx_string_put(meta_get_mlx(m),
+					meta_get_win(m),
 					0,
 					0,
 					MOVE_COUNTER_COLOR,
@@ -53,8 +54,8 @@ void	draw_move_counter(t_meta *m)
 
 	str = ft_itoa(player_get_move_counter(m));
 	draw_clear_move_counter(m);
-	mlx_string_put(m->mlx,
-					m->win->ref,
+	mlx_string_put(meta_get_mlx(m),
+					meta_get_win(m),
 					MOVE_COUNTER_X * IMG_SIZE,
 					0,
 					MOVE_COUNTER_COLOR,

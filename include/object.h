@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:47:20 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:24:06 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 18:15:16 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,10 @@ typedef struct s_sprite
 	t_image	*img_map[NUM_OF_SPRITES];
 }	t_sprite;
 
-typedef struct s_window
-{
-	void		*ref;
-	// size is in the control of map
-	t_point		size;
-}				t_window;
-
 typedef struct s_meta
 {
 	void		*mlx;
-	t_window	*win;
+	void		*win;
 	t_sprite	*sprite;
 	t_map		*map;
 	t_player	*player;

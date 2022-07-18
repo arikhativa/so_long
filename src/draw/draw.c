@@ -6,26 +6,27 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:12:33 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:33:48 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 18:15:35 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "object.h"
 #include "define.h"
+#include "meta.h"
 #include "point.h"
 #include "image.h"
 #include "mlx.h"
 
 void	draw_reset_pos(t_meta *m, t_point pos)
 {
-	mlx_put_image_to_window(m->mlx, m->win->ref,
+	mlx_put_image_to_window(meta_get_mlx(m), meta_get_win(m),
 		get_image(m, EMPTY_I), pos.x * IMG_SIZE, pos.y * IMG_SIZE);
 }
 
 void	draw_image(t_meta *m, t_point pos, int image_index)
 {
 	draw_reset_pos(m, pos);
-	mlx_put_image_to_window(m->mlx, m->win->ref,
+	mlx_put_image_to_window(meta_get_mlx(m), meta_get_win(m),
 		get_image(m, image_index), pos.x * IMG_SIZE, pos.y * IMG_SIZE);
 }
 

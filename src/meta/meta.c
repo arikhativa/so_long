@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 14:58:26 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 18:14:54 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "object.h"
 #include "input.h"
 #include "sprite.h"
-#include "window.h"
 #include "map.h"
 #include "point.h"
 #include "meta.h"
@@ -46,7 +45,10 @@ static inline int	meta_create_1(t_meta *m, int fd)
 	m->mlx = mlx_init();
 	if (!m->mlx)
 		return (ERROR_MLX_CONNECTION);
-	m->win = window_create(m->mlx, map_get_size(m));
+	m->win = mlx_new_window(m->mlx, \
+		map_get_size(m).x * IMG_SIZE, \
+		(map_get_size(m).y + 1) * IMG_SIZE, \
+		GAME_NAME);
 	if (!m->win)
 		return (ERROR_WINDOW_CREATE);
 	m->sprite = sprite_create_and_load(meta_get_mlx(m));
@@ -70,8 +72,6 @@ int meta_init(t_meta *m, int fd)
 
 void	meta_free(t_meta *m)
 {
-	if (m->win)
-		window_free(m->win, m->mlx);
 	if (m->sprite)
 		sprite_free(m->sprite, m->mlx);
 	if (m->map)
