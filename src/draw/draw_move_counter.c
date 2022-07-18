@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 11:07:30 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 11:39:58 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 15:06:37 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,16 @@ void	draw_init_move_counter(t_meta *m)
 
 void	draw_clear_move_counter(t_meta *m)
 {
-	t_point *map_size;
+	t_point map_size;
 	t_point pos;
 	int		i;
 
 	map_size = map_get_size(m);
 	i = 0;
-	while (i < map_size->x)
+	while (i < map_size.x)
 	{
-		point_set(&pos, MOVE_COUNTER_X + i, 0);
-		draw_reset_pos(m, &pos);
+		pos = point_set(MOVE_COUNTER_X + i, 0);
+		draw_reset_pos(m, pos);
 		++i;
 	}
 }

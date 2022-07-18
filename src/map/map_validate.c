@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrabby <files.associations>                +#+  +:+       +#+        */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:04:29 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 13:07:43 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 15:22:13 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,25 @@ int	map_validate_size_cnd_char(t_map *m)
 {
 	int	i;
 
-	if (!is_height_valid(m->size->y))
+	if (!is_height_valid(m->size.y))
 		return (ERROR_HEIGHT);
-	m->size->x = get_line_size(m->tab[0]);
-	if (!is_first_line_size_valid(m->size->x))
+	m->size.x = get_line_size(m->tab[0]);
+	if (!is_first_line_size_valid(m->size.x))
 		return (ERROR_SIZE_TOP);
-	if (!is_topbot_line_chars_valid(m->tab[0], m->size->x))
+	if (!is_topbot_line_chars_valid(m->tab[0], m->size.x))
 		return (ERROR_CHAR_TOP);
 	i = 1;
-	while (i < (m->size->y - 1))
+	while (i < (m->size.y - 1))
 	{
-		if (!is_mid_line_size_valid(m->tab[i], m->size->x))
+		if (!is_mid_line_size_valid(m->tab[i], m->size.x))
 			return (ERROR_SIZE_MID);
-		if (!is_mid_line_chars_valid(m->tab[i], m->size->x))
+		if (!is_mid_line_chars_valid(m->tab[i], m->size.x))
 			return (ERROR_CHAR_MID);
 		++i;
 	}
-	if (!is_mid_line_size_valid(m->tab[m->size->y - 1], m->size->x))
+	if (!is_mid_line_size_valid(m->tab[m->size.y - 1], m->size.x))
 		return (ERROR_SIZE_BOTTOM);
-	if (!is_topbot_line_chars_valid(m->tab[m->size->y - 1], m->size->x))
+	if (!is_topbot_line_chars_valid(m->tab[m->size.y - 1], m->size.x))
 		return (ERROR_CHAR_BOTTOM);
 	return (SUCCESS);
 }

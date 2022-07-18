@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   image.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrabby <files.associations>                +#+  +:+       +#+        */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 14:52:30 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 13:24:13 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 15:18:26 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,11 @@ t_image	*image_create(void)
 	img = (t_image *)ft_calloc(1, sizeof(t_image));
 	if (!img)
 		return (NULL);
-	img->size = point_create();
-	if (!img->size)
-	{
-		free(img);
-		return (NULL);
-	}
 	return (img);
 }
 
 void	image_free(t_image *img, void *mlx)
 {
-	point_free(img->size);
-	img->size = NULL;
 	// mlx_destroy_image(mlx, img->ref);
 	free(img);
 }
@@ -71,8 +63,8 @@ int	image_load(t_image *img, void *mlx, char *file_name)
 	char	path[MAX_PATH];
 
 	init_path(path, file_name);
-	img->ref = mlx_xpm_file_to_image(mlx, path, &(img->size->x), \
-		&(img->size->y));
+	img->ref = mlx_xpm_file_to_image(mlx, path, &(img->size.x), \
+		&(img->size.y));
 	if (!img->ref)
 		return (ERROR);
 	img->pixel = mlx_get_data_addr(img->ref, &(img->bits_per_pixel), \
@@ -82,13 +74,13 @@ int	image_load(t_image *img, void *mlx, char *file_name)
 	return (SUCCESS);
 }
 
-void	image_put(t_image *img, t_meta *m, t_point *p)
+void	image_put(t_image *img, t_meta *m, t_point p)
 {
 	mlx_put_image_to_window(
 		meta_get_mlx(m), \
 		meta_get_win(m), \
 		img->ref, \
-		p->x, \
-		p->y \
+		p.x, \
+		p.y \
 	);
 }

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:47:20 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 15:54:34 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 15:24:06 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,19 @@ typedef struct s_player
 {
 	int	is_enable;
 	int	move_counter;
-	t_point	*pos;
+	t_point	pos;
 }	t_player;
 
 typedef struct s_map
 {
 	char	**tab;
-	t_point	*size;
+	t_point	size;
 }	t_map;
 
 typedef struct s_image
 {
 	void		*ref;
-	t_point		*size;
+	t_point		size;
 	char		*pixel;
 	int			bits_per_pixel;
 	int			line_size;
@@ -58,7 +58,7 @@ typedef struct s_window
 {
 	void		*ref;
 	// size is in the control of map
-	t_point		*size;
+	t_point		size;
 }				t_window;
 
 typedef struct s_meta
@@ -71,6 +71,6 @@ typedef struct s_meta
 	t_collect	*collect;
 }				t_meta;
 
-typedef void (*t_point_move)(t_point *p);
+typedef t_point (*t_point_move)(t_point p);
 
 #endif

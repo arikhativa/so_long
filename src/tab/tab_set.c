@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   collect_get.c                                      :+:      :+:    :+:   */
+/*   tab_set.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 15:38:06 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:39:29 by yrabby           ###   ########.fr       */
+/*   Created: 2022/07/18 15:45:21 by yrabby            #+#    #+#             */
+/*   Updated: 2022/07/18 15:45:55 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "object.h"
 
-int	collect_is_done(t_meta *m)
+void	tab_set(char **tab, t_point p, char c)
 {
-	printf("col: %d\n", m->collect->num_of_collect);
-	return (0 == m->collect->num_of_collect);
+	tab[p.y][p.x] = c;
 }

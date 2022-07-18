@@ -6,13 +6,13 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 10:27:08 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 10:29:33 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 15:45:14 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "object.h"
 
-char	tab_get_char(char **tab, t_point *p)
+char	tab_get_char(char **tab, t_point p)
 {
-	return (tab[p->y][p->x]);
+	return (tab[p.y][p.x]);
 }

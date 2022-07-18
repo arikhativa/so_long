@@ -6,24 +6,23 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 17:15:29 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 16:34:17 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 14:59:39 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 #include "point.h"
+#include "meta.h"
 #include "define.h"
 #include "player.h"
 #include "object.h"
 
 int	handler_close(int key, t_meta *m)
 {
-	printf("close\n");
-	// TODO does not work for some reason
-	// meta_free(m);
-	// system("leaks so_long");
+	if (ESC == key)
+		meta_free(m);
+	system("leaks so_long");
 	exit(0);
 }
 

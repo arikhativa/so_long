@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:32:56 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 15:57:31 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 15:26:26 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "point.h"
 #include "player.h"
 
-void	player_set_pos(t_meta *m, t_point *new_pos)
+void	player_set_pos(t_meta *m, t_point new_pos)
 {
-	point_copy(player_get_pos(m), new_pos);
+	m->player->pos = point_copy(new_pos);
 }
 
 void	player_inc_move_counter(t_meta *m)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrabby <files.associations>                +#+  +:+       +#+        */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 13:21:57 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 15:08:53 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@
 int main(int ac, char **av)
 {
 	t_meta	m;
-	t_point	p;
 	int	fd;
 	int	stt;
 
@@ -47,18 +46,17 @@ int main(int ac, char **av)
 		return (ERROR);
 	}
 	stt = meta_init(&m, fd);
+	close(fd);
 	if (SUCCESS != stt)
 	{
 		error_print(stt);
-		close(fd);
-		// system("leaks so_long");
+		system("leaks so_long");
 		return (ERROR);
 	}
 	draw_map(&m);
 	init_hooks(&m);
 	mlx_loop(m.mlx);
 	meta_free(&m);
-	close(fd);
-	// system("leaks so_long");
+	system("leaks so_long");
 	return (SUCCESS);
 }

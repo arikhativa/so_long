@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:38:22 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/17 15:56:22 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/18 15:38:58 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 #include "libft.h"
 #include "point.h"
+#include "player.h"
 #include "object.h"
 
 // TODO make generic
-void	find_player_pos_in_map(t_meta *m, t_point *pos)
+static void	find_player_pos_in_map(t_meta *m)
 {
 	char	**tab;
 	int		x;
@@ -32,8 +33,7 @@ void	find_player_pos_in_map(t_meta *m, t_point *pos)
 		{
 			if (tab[y][x] == PLAYER_CHAR)
 			{
-				pos->x = x;
-				pos->y = y;
+				player_set_pos(m, point_set(x, y));
 				return ;
 			}
 			++x;
@@ -47,22 +47,12 @@ int player_create(t_meta *m)
 	m->player = (t_player *)ft_calloc(1, sizeof(t_player));
 	if (!m->player)
 		return (ERROR_PLAYER_CREATE);
-	m->player->pos = point_create();
-	if (!m->player->pos)
-	{
-		free(m->player);
-		// TODO make sure m free is safe - maybe bzero in main
-		m->player = NULL;
-		return (ERROR_PLAYER_CREATE);
-	}
-	find_player_pos_in_map(m, m->player->pos);
+	find_player_pos_in_map(m);
 	m->player->is_enable = TRUE;
 	return (SUCCESS);
 }
 
 void	player_free(t_player *p)
 {
-	point_free(p->pos);
-	p->pos = NULL;
 	free(p);
 }
