@@ -17,6 +17,6 @@
 
 void	init_hooks(t_meta *m)
 {
-	mlx_hook(meta_get_win(m), KEY_PRESS, 0, handler_key_press, m);
+	mlx_key_hook(meta_get_win(m), handler_key_press, m);
 	mlx_hook(meta_get_win(m), DESTROY_WINDOW, 0, handler_close, m);
 }

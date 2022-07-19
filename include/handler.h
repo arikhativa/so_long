@@ -16,6 +16,6 @@
 # include "object.h"
 
 int	handler_key_press(int key, t_meta *m);
-int	handler_close(int key, t_meta *m);
+int	handler_close(t_meta *m);
 
 #endif

@@ -19,9 +19,6 @@
 
 void	player_remove_old_pos(t_meta *m)
 {
-	t_point	p;
-
-	p = player_get_pos(m);
 	draw_reset_on_map(m, player_get_pos(m));
 }
 

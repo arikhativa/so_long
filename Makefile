@@ -13,20 +13,20 @@
 NAME = so_long
 
 
-ifeq ($(OS),linux)
+# ifeq ($(OS),linux)
 LIBMLX_NAME = libmlx_Linux.a
 LIBMLX_PATH = minilibx-linux
 LDFLAGS = -L$(LIB_PATH) -L$(LIBMLX_PATH) -L/usr/lib
-LDLIBS = -l42 -lmlx -lmlx_Linux -lm -lz -lXext -lX11
-endif
+LDLIBS = -l42 -lmlx_Linux -lm -lz -lXext -lX11
+# endif
 
-ifndef ($(OS))
-LIBMLX_NAME = libmlx.a
-LIBMLX_PATH = libmlx
-MLX_CFLAGS = " -Wno-deprecated-declarations"
-LDFLAGS = -L$(LIB_PATH) -L$(LIBMLX_PATH)
-LDLIBS = -l42 -lmlx -framework OpenGL -framework AppKit
-endif
+# ifndef ($(OS))
+#LIBMLX_NAME = libmlx.a
+#LIBMLX_PATH = libmlx
+#MLX_CFLAGS = " -Wno-deprecated-declarations"
+#LDFLAGS = -L$(LIB_PATH) -L$(LIBMLX_PATH)
+#LDLIBS = -l42 -lmlx -framework OpenGL -framework AppKit
+# endif
 
 # lib42
 LIB_NAME = lib42.a
@@ -62,7 +62,8 @@ OBJ = $(SRC:.c=.o)
 # header
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -c
+# CFLAGS = -Wall -Werror -Wextra -c
+CFLAGS = -c
 HED_INCLUD = -I$(LIBFT_HED_DIR) -I$(FT_PRINTF_HED_DIR) -I$(GNL_HED_DIR) -I$(SO_LONG_HED_DIR) -I$(LIBMLX_HED_DIR)
 
 .PHONY: clean fclean re all
@@ -86,7 +87,6 @@ clean:
 	$(RM) $(OBJ)
 
 fclean: clean
-	$(MAKE) clean -sC ./$(LIBMLX_PATH)
 	$(MAKE) fclean -sC ./$(LIB_PATH)
 	$(RM) $(NAME)
 

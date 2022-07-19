@@ -25,11 +25,11 @@
 void	draw_init_move_counter(t_meta *m)
 {
 	mlx_string_put(meta_get_mlx(m), \
-	meta_get_win(m), \
-	0, \
-	0, \
-	MOVE_COUNTER_COLOR, \
-	MOVE_COUNTER_TEXT);
+		meta_get_win(m), \
+		0, \
+		0, \
+		MOVE_COUNTER_COLOR, \
+		MOVE_COUNTER_TEXT);
 }
 
 void	draw_clear_move_counter(t_meta *m)
@@ -58,7 +58,7 @@ void	draw_move_counter(t_meta *m)
 		meta_get_win(m), \
 		MOVE_COUNTER_X * IMG_SIZE, \
 		0, \
-		MOVE_COUNTER_COLOR, \
+		0x55f44fff, \
 		str);
 	free(str);
 }

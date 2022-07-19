@@ -16,19 +16,19 @@
 #include "meta.h"
 #include "define.h"
 #include "player.h"
+#include "mlx.h"
 #include "object.h"
 
-int	handler_close(int key, t_meta *m)
+int	handler_close(t_meta *m)
 {
-	if (ESC == key)
-		meta_free(m);
-	exit(0);
+	mlx_loop_end(meta_get_mlx(m));
+	return (SUCCESS);
 }
 
 int	handler_key_press(int key, t_meta *m)
 {
 	if (ESC == key)
-		handler_close(key, m);
+		handler_close(m);
 	else if (KEY_UP == key)
 		player_eval(m, point_move_up);
 	else if (KEY_DOWN == key)
@@ -37,5 +37,5 @@ int	handler_key_press(int key, t_meta *m)
 		player_eval(m, point_move_left);
 	else if (KEY_RIGHT == key)
 		player_eval(m, point_move_right);
-	return (1);
+	return (SUCCESS);
 }

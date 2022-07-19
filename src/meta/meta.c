@@ -65,6 +65,7 @@ int	meta_init(t_meta *m, int fd)
 {
 	int		stt;
 
+	ft_bzero(m, sizeof(t_meta));
 	stt = meta_create_1(m, fd);
 	if (SUCCESS != stt)
 	{
@@ -86,4 +87,12 @@ void	meta_free(t_meta *m)
 		player_free(m->player);
 	if (m->collect)
 		collect_free(m->collect);
+	if (m->win)
+		mlx_destroy_window(m->mlx, m->win);
+	if (m->mlx)
+	{
+		mlx_destroy_display(m->mlx);
+		free(m->mlx);
+	}
+	ft_bzero(m, sizeof(t_meta));
 }
