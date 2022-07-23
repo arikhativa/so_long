@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:54:37 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:19:17 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/23 14:13:02 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,12 @@
 # define END_MSG_I	7
 
 // Events (defined my mlx)
-# define KEY_PRESS	2
 # define DESTROY_WINDOW	17
-# define ESC	65307
-# define KEY_UP		119
-# define KEY_DOWN	 115
-# define KEY_LEFT	 97
-# define KEY_RIGHT	 100
+# define ESC		53
+# define KEY_UP		13
+# define KEY_DOWN	 1
+# define KEY_LEFT	 0
+# define KEY_RIGHT	 2
 
 # define GAME_NAME		"so-long"
 

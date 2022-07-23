@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/18 18:39:54 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/23 14:04:22 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,28 +14,24 @@ NAME = so_long
 
 
 # ifeq ($(OS),linux)
-LIBMLX_NAME = libmlx_Linux.a
-LIBMLX_PATH = minilibx-linux
-LDFLAGS = -L$(LIB_PATH) -L$(LIBMLX_PATH) -L/usr/lib
-LDLIBS = -l42 -lmlx_Linux -lm -lz -lXext -lX11
+# LIBMLX_NAME = libmlx_Linux.a
+# LIBMLX_PATH = minilibx-linux
+# LDFLAGS = -L$(LIB_PATH) -L$(LIBMLX_PATH) -L/usr/lib
+# LDLIBS = -l42 -lmlx_Linux -lm -lz -lXext -lX11
 # endif
 
 # ifndef ($(OS))
-#LIBMLX_NAME = libmlx.a
-#LIBMLX_PATH = libmlx
-#MLX_CFLAGS = " -Wno-deprecated-declarations"
-#LDFLAGS = -L$(LIB_PATH) -L$(LIBMLX_PATH)
-#LDLIBS = -l42 -lmlx -framework OpenGL -framework AppKit
+LIBMLX_NAME = libmlx.a
+LIBMLX_PATH = libmlx
+MLX_CFLAGS = " -Wno-deprecated-declarations"
+LDFLAGS = -L$(LIB_PATH) -L$(LIBMLX_PATH)
+LDLIBS = -l42 -lmlx -framework OpenGL -framework AppKit -lm -lz
 # endif
 
 # lib42
 LIB_NAME = lib42.a
 LIB_PATH = lib42
 LIB  = $(addprefix $(LIB_PATH)/, $(LIB_NAME))
-
-# mlx
-LIBMLX = $(addprefix $(LIBMLX_PATH)/, $(LIBMLX_NAME))
-LIBMLX_HED_DIR = $(LIBMLX_PATH)
 
 # mlx
 LIBMLX = $(addprefix $(LIBMLX_PATH)/, $(LIBMLX_NAME))
@@ -81,7 +77,6 @@ $(LIB):
 
 $(NAME): $(OBJ) $(LIB) $(LIBMLX)
 	$(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
-# $(CC) -fsanitize=address $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
 
 clean:
 	$(RM) $(OBJ)

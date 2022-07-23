@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 17:15:29 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:33:19 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/23 14:26:37 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 
 int	handler_close(t_meta *m)
 {
-	mlx_loop_end(meta_get_mlx(m));
+	meta_free(m);
+	exit(SUCCESS);
 	return (SUCCESS);
 }
 

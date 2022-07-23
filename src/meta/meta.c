@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:13:19 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/23 14:25:20 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,5 @@ void	meta_free(t_meta *m)
 		collect_free(m->collect);
 	if (m->win)
 		mlx_destroy_window(m->mlx, m->win);
-	if (m->mlx)
-	{
-		mlx_destroy_display(m->mlx);
-		free(m->mlx);
-	}
 	ft_bzero(m, sizeof(t_meta));
 }
