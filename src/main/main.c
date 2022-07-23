@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/23 14:25:30 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/23 16:12:55 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ int	main(int ac, char **av)
 		return (ERROR);
 	}
 	mlx_loop(meta_get_mlx(&m));
+	meta_free(&m);
 	return (SUCCESS);
 }
