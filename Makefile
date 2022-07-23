@@ -6,27 +6,11 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/23 14:04:22 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/23 14:29:50 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-
-
-# ifeq ($(OS),linux)
-# LIBMLX_NAME = libmlx_Linux.a
-# LIBMLX_PATH = minilibx-linux
-# LDFLAGS = -L$(LIB_PATH) -L$(LIBMLX_PATH) -L/usr/lib
-# LDLIBS = -l42 -lmlx_Linux -lm -lz -lXext -lX11
-# endif
-
-# ifndef ($(OS))
-LIBMLX_NAME = libmlx.a
-LIBMLX_PATH = libmlx
-MLX_CFLAGS = " -Wno-deprecated-declarations"
-LDFLAGS = -L$(LIB_PATH) -L$(LIBMLX_PATH)
-LDLIBS = -l42 -lmlx -framework OpenGL -framework AppKit -lm -lz
-# endif
 
 # lib42
 LIB_NAME = lib42.a
@@ -34,6 +18,9 @@ LIB_PATH = lib42
 LIB  = $(addprefix $(LIB_PATH)/, $(LIB_NAME))
 
 # mlx
+LIBMLX_NAME = libmlx.a
+LIBMLX_PATH = libmlx
+MLX_CFLAGS = " -Wno-deprecated-declarations"
 LIBMLX = $(addprefix $(LIBMLX_PATH)/, $(LIBMLX_NAME))
 LIBMLX_HED_DIR = $(LIBMLX_PATH)
 
@@ -55,11 +42,11 @@ SO_LONG_HED = $(wildcard $(SO_LONG_HED_DIR)/*.h)
 SRC = $(wildcard src/**/*.c) $(SRC_GNL)
 OBJ = $(SRC:.c=.o)
 
-# header
-
 CC = gcc
-# CFLAGS = -Wall -Werror -Wextra -c
 CFLAGS = -c
+# CFLAGS = -Wall -Werror -Wextra -c
+LDFLAGS = -L$(LIB_PATH) -L$(LIBMLX_PATH)
+LDLIBS = -l42 -lmlx -framework OpenGL -framework AppKit -lm -lz
 HED_INCLUD = -I$(LIBFT_HED_DIR) -I$(FT_PRINTF_HED_DIR) -I$(GNL_HED_DIR) -I$(SO_LONG_HED_DIR) -I$(LIBMLX_HED_DIR)
 
 .PHONY: clean fclean re all
@@ -79,28 +66,13 @@ $(NAME): $(OBJ) $(LIB) $(LIBMLX)
 	$(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
 
 clean:
+	$(MAKE) clean -sC ./$(LIB_PATH)
+	$(MAKE) clean -sC ./$(LIBMLX_PATH)
 	$(RM) $(OBJ)
 
 fclean: clean
+	$(MAKE) clean -sC ./$(LIBMLX_PATH)
 	$(MAKE) fclean -sC ./$(LIB_PATH)
 	$(RM) $(NAME)
 
 re: fclean all
-
-# Docker
-
-# IMG=arikhativa/minilibx:ubuntu
-# CONTAINER_NAME=so_long
-# WORKDIR=/home
-
-# run:
-# 	docker run -d -it -v $(HOME):$(WORKDIR)/ --name $(NAME) $(IMG)
-
-# stop:
-# 	docker rm -f $(NAME)
-
-# enter:
-# 	docker exec -it $(NAME) bash
-
-# build:
-# 	docker build -t $(IMG) .
