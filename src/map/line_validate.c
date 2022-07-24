@@ -6,12 +6,12 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 12:20:59 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/16 17:51:56 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:15:23 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "define.h"
-#include "libft.h"
+#include "lib42.h"
 
 int	get_line_size(char *line)
 {

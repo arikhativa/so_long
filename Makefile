@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/23 16:30:27 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/24 11:17:25 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,17 +24,9 @@ LIBMLX = $(addprefix $(LIBMLX_PATH)/, $(LIBMLX_NAME))
 LIBMLX_HEAD_DIR = $(LIBMLX_PATH)
 MLX_CFLAGS = " -Wno-deprecated-declarations"
 
-# gnl
-GNL_DIR = $(LIB42_PATH)/get_next_line
-GNL_HEAD_DIR = $(GNL_DIR)
-
-# ft_printf
-FT_PRINTF_DIR = $(LIB42_PATH)/ft_printf
-FT_PRINTF_HEAD_DIR = $(FT_PRINTF_DIR)
-
-# libft
-LIBFT_DIR = $(FT_PRINTF_DIR)/libft
-LIBFT_HEAD_DIR = $(LIBFT_DIR)
+# lib42
+LIB42_DIR = lib42
+LIBF42_HEAD_DIR = $(LIB42_DIR)
 
 # so_long
 SO_LONG_HEAD_DIR = include
@@ -102,7 +94,7 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra -c
 LDFLAGS = -L$(LIB42_PATH) -L$(LIBMLX_PATH)
 LDLIBS = -l42 -lmlx -framework OpenGL -framework AppKit -lm -lz
-HEAD_INCLUD = -I$(LIBFT_HEAD_DIR) -I$(FT_PRINTF_HEAD_DIR) -I$(GNL_HEAD_DIR) -I$(SO_LONG_HEAD_DIR) -I$(LIBMLX_HEAD_DIR)
+HEAD_INCLUD = -I$(LIBF42_HEAD_DIR) -I$(SO_LONG_HEAD_DIR) -I$(LIBMLX_HEAD_DIR)
 
 .PHONY: clean fclean re all
 

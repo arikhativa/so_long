@@ -6,12 +6,12 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 15:12:56 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 18:59:43 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:15:23 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "object.h"
-#include "libft.h"
+#include "lib42.h"
 #include "map.h"
 
 static void	remove_player_if_needed(int *should_remove, char *ptr)

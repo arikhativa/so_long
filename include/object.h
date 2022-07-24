@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:47:20 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:17:23 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:14:49 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,26 @@
 typedef struct s_collect
 {
 	int	num_of_collect;
-}	t_collect;
+}				t_collect;
 
 typedef struct s_point
 {
 	int	x;
 	int	y;
-}	t_point;
+}				t_point;
 
 typedef struct s_player
 {
 	int		is_enable;
 	int		move_counter;
 	t_point	pos;
-}	t_player;
+}				t_player;
 
 typedef struct s_map
 {
 	char	**tab;
 	t_point	size;
-}	t_map;
+}				t_map;
 
 typedef struct s_image
 {
@@ -52,7 +52,7 @@ typedef struct s_image
 typedef struct s_sprite
 {
 	t_image	*img_map[NUM_OF_SPRITES];
-}	t_sprite;
+}				t_sprite;
 
 typedef struct s_meta
 {

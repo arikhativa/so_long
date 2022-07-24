@@ -6,11 +6,11 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:04:29 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:22:13 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:15:23 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lib42.h"
 #include "object.h"
 #include "map.h"
 #include "define.h"

@@ -6,13 +6,13 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 14:52:30 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 18:40:39 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:15:23 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-#include "libft.h"
+#include "lib42.h"
 #include "define.h"
 #include "point.h"
 #include "image.h"

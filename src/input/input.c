@@ -6,21 +6,21 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:41:38 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:01:12 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:18:10 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <stdlib.h>
 
-#include "libft.h"
+#include "lib42.h"
 #include "point.h"
 #include "object.h"
 #include "map.h"
 #include "tab.h"
 #include "define.h"
 #include "input.h"
-#include "get_next_line.h"
+#include "lib42.h"
 
 int	input_open(const char *file_path)
 {

@@ -6,12 +6,12 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 12:30:49 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:33:05 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:17:51 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "define.h"
-#include "ft_printf.h"
+#include "lib42.h"
 
 static void	error_print_msg(char *err_msg, int error_code)
 {

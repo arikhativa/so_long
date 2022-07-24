@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 11:07:30 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:14:41 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:15:23 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "mlx.h"
 #include "object.h"
 #include "player.h"
-#include "libft.h"
+#include "lib42.h"
 #include "point.h"
 #include "map.h"
 #include "draw.h"

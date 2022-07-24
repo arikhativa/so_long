@@ -6,14 +6,14 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:47:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 15:21:44 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:15:23 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 #include "point.h"
-#include "libft.h"
+#include "lib42.h"
 #include "map.h"
 #include "object.h"
 #include "tab.h"
