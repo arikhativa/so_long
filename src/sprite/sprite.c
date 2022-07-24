@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:31:33 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/24 12:00:28 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 12:23:50 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "define.h"
 #include "image.h"
 #include "sprite.h"
-#include "lib42.h"
+#include "libft.h"
 #include "object.h"
 
 static inline int	sprite_check_create(t_sprite *s)

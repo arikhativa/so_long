@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:21:50 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/24 11:58:37 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 12:23:50 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #include "collect.h"
 #include "hook.h"
 #include "draw.h"
-#include "lib42.h"
+#include "libft.h"
 
 static inline int	meta_create_2(t_meta *m)
 {

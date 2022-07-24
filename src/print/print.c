@@ -6,11 +6,11 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 16:31:32 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/24 12:00:09 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 12:23:50 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
+#include "libft.h"
 #include "player.h"
 #include "object.h"
 

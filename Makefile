@@ -6,16 +6,16 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/24 11:17:25 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/24 12:25:32 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-# lib42
-LIB42_NAME = lib42.a
-LIB42_PATH = lib42
-LIB42  = $(addprefix $(LIB42_PATH)/, $(LIB42_NAME))
+# libft
+LIBFT_NAME = libft.a
+LIBFT_DIR = libft
+LIBFT  = $(addprefix $(LIBFT_DIR)/, $(LIBFT_NAME))
 
 # mlx
 LIBMLX_NAME = libmlx.a
@@ -23,10 +23,6 @@ LIBMLX_PATH = libmlx
 LIBMLX = $(addprefix $(LIBMLX_PATH)/, $(LIBMLX_NAME))
 LIBMLX_HEAD_DIR = $(LIBMLX_PATH)
 MLX_CFLAGS = " -Wno-deprecated-declarations"
-
-# lib42
-LIB42_DIR = lib42
-LIBF42_HEAD_DIR = $(LIB42_DIR)
 
 # so_long
 SO_LONG_HEAD_DIR = include
@@ -90,11 +86,11 @@ SRC = \
 
 OBJ = $(SRC:.c=.o)
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Werror -Wextra -c
-LDFLAGS = -L$(LIB42_PATH) -L$(LIBMLX_PATH)
-LDLIBS = -l42 -lmlx -framework OpenGL -framework AppKit -lm -lz
-HEAD_INCLUD = -I$(LIBF42_HEAD_DIR) -I$(SO_LONG_HEAD_DIR) -I$(LIBMLX_HEAD_DIR)
+LDFLAGS = -L$(LIBFT_DIR) -L$(LIBMLX_PATH)
+LDLIBS = -lft -lmlx -framework OpenGL -framework AppKit -lm -lz
+HEAD_INCLUD = -I$(LIBFT_DIR) -I$(SO_LONG_HEAD_DIR) -I$(LIBMLX_HEAD_DIR)
 
 .PHONY: clean fclean re all
 
@@ -106,20 +102,20 @@ all: $(NAME)
 $(LIBMLX):
 	$(MAKE) -sC ./$(LIBMLX_PATH) CFLAGS+=$(MLX_CFLAGS)
 
-$(LIB42):
-	$(MAKE) all -sC ./$(LIB42_PATH)
+$(LIBFT):
+	$(MAKE) all -sC ./$(LIBFT_DIR)
 
-$(NAME): $(OBJ) $(LIB42) $(LIBMLX) $(SO_LONG_HEAD)
+$(NAME): $(OBJ) $(LIBFT) $(LIBMLX) $(SO_LONG_HEAD)
 	$(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
 
 clean:
-	$(MAKE) clean -sC ./$(LIB42_PATH)
+	$(MAKE) clean -sC ./$(LIBFT_DIR)
 	$(MAKE) clean -sC ./$(LIBMLX_PATH)
 	$(RM) $(OBJ)
 
 fclean: clean
 	$(MAKE) clean -sC ./$(LIBMLX_PATH)
-	$(MAKE) fclean -sC ./$(LIB42_PATH)
+	$(MAKE) fclean -sC ./$(LIBFT_DIR)
 	$(RM) $(NAME)
 
 re: fclean all
