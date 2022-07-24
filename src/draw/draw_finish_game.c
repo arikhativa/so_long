@@ -6,20 +6,13 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 15:56:58 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/24 11:15:23 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:51:59 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
 #include "mlx.h"
 #include "object.h"
-#include "player.h"
-#include "lib42.h"
-#include "point.h"
 #include "meta.h"
-#include "map.h"
-#include "draw.h"
 #include "define.h"
 
 void	draw_finish_game(t_meta *m)

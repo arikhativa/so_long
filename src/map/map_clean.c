@@ -6,15 +6,14 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 15:12:56 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/24 11:15:23 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:56:53 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "object.h"
-#include "lib42.h"
-#include "map.h"
+#include "define.h"
 
-static void	remove_player_if_needed(int *should_remove, char *ptr)
+static inline void	remove_player_if_needed(int *should_remove, char *ptr)
 {
 	if (FALSE == *should_remove && PLAYER_CHAR == *ptr)
 	{

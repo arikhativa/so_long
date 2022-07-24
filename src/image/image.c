@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 14:52:30 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/24 11:15:23 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:54:47 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 #include "lib42.h"
 #include "define.h"
-#include "point.h"
 #include "image.h"
 #include "meta.h"
 #include "mlx.h"

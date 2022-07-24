@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:41:38 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/24 11:18:10 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:55:17 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@
 #include "tab.h"
 #include "define.h"
 #include "input.h"
-#include "lib42.h"
 
 int	input_open(const char *file_path)
 {
 	return (open(file_path, O_RDONLY));
 }
 
-t_map	*input_create_map2(char **src_tab, int tab_size)
+static t_map	*input_create_map2(char **src_tab, int tab_size)
 {
 	char	**dest_tab;
 	t_map	*m;

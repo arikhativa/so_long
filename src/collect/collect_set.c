@@ -6,12 +6,9 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 15:36:56 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:15:35 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:50:58 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <execinfo.h>
-#include <stdlib.h>
 
 #include "object.h"
 

@@ -6,18 +6,18 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 16:35:24 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 18:09:27 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:57:46 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "meta.h"
+#include "object.h"
 
-inline void	*meta_get_mlx(t_meta *m)
+void	*meta_get_mlx(t_meta *m)
 {
 	return (m->mlx);
 }
 
-inline void	*meta_get_win(t_meta *m)
+void	*meta_get_win(t_meta *m)
 {
 	return (m->win);
 }

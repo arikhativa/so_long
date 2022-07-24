@@ -6,14 +6,11 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:05:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/24 11:15:23 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 12:00:00 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-#include "lib42.h"
-#include "point.h"
+#include "object.h"
 
 t_point	point_copy(t_point p)
 {

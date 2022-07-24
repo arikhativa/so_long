@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:22:02 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 18:43:43 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:49:45 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "collect.h"
 #include "map.h"
 
-void	player_remove_old_pos(t_meta *m)
+static inline void	player_remove_old_pos(t_meta *m)
 {
 	draw_reset_on_map(m, player_get_pos(m));
 }

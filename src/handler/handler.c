@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 17:15:29 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/23 14:26:37 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:54:18 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "meta.h"
 #include "define.h"
 #include "player.h"
-#include "mlx.h"
 #include "object.h"
 
 int	handler_close(t_meta *m)

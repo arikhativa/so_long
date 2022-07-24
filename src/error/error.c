@@ -6,19 +6,19 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 12:30:49 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/24 11:17:51 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:42:35 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "define.h"
 #include "lib42.h"
 
-static void	error_print_msg(char *err_msg, int error_code)
+static inline void	error_print_msg(char *err_msg, int error_code)
 {
 	ft_printf("Error\n\tERROR CODE: %d\n\t%s\n", error_code, err_msg);
 }
 
-static void	error_print1(int err)
+static inline void	error_print1(int err)
 {
 	if (ERROR_CHAR_TOP == err)
 		error_print_msg("Map error: Invalid char at first line", err);
@@ -42,7 +42,7 @@ static void	error_print1(int err)
 		error_print_msg("Map error: missing exit", err);
 }
 
-void	error_print2(int err)
+static inline void	error_print2(int err)
 {
 	if (ERROR_MLX_CONNECTION == err)
 		error_print_msg("MLX error: failed to init mlx", err);

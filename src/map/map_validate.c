@@ -6,11 +6,10 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:04:29 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/24 11:15:23 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:57:18 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42.h"
 #include "object.h"
 #include "map.h"
 #include "define.h"
@@ -20,7 +19,7 @@ static inline int	is_height_valid(int height)
 	return (MIN_HEIGHT_LEN <= height);
 }
 
-int	map_validate_size_cnd_char(t_map *m)
+static inline int	map_validate_size_cnd_char(t_map *m)
 {
 	int	i;
 

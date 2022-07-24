@@ -6,14 +6,11 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 17:19:14 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:14:51 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:52:34 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx.h"
 #include "point.h"
-#include "image.h"
-#include "define.h"
 #include "map.h"
 #include "object.h"
 #include "draw.h"

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:12:33 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/18 19:15:28 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 11:41:48 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	draw_reset_pos(t_meta *m, t_point pos)
 		get_image(m, EMPTY_I), pos.x * IMG_SIZE, pos.y * IMG_SIZE);
 }
 
-void	draw_image(t_meta *m, t_point pos, int image_index)
+static void	draw_image(t_meta *m, t_point pos, int image_index)
 {
 	draw_reset_pos(m, pos);
 	mlx_put_image_to_window(meta_get_mlx(m), meta_get_win(m),
