@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 15:29:13 by yoav              #+#    #+#              #
-#    Updated: 2022/07/24 12:25:32 by yrabby           ###   ########.fr        #
+#    Updated: 2022/07/24 12:40:23 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ OBJ = $(SRC:.c=.o)
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -c
 LDFLAGS = -L$(LIBFT_DIR) -L$(LIBMLX_PATH)
-LDLIBS = -lft -lmlx -framework OpenGL -framework AppKit -lm -lz
+LDLIBS = -lft -lmlx -framework OpenGL -framework AppKit
 HEAD_INCLUD = -I$(LIBFT_DIR) -I$(SO_LONG_HEAD_DIR) -I$(LIBMLX_HEAD_DIR)
 
 .PHONY: clean fclean re all
