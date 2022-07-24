@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:55:04 by yrabby            #+#    #+#             */
-/*   Updated: 2022/07/24 12:30:58 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/07/24 12:35:38 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "define.h"
 #include "mlx.h"
 #include "meta.h"
+#include "input.h"
 #include "error.h"
 
 int	main(int ac, char **av)
